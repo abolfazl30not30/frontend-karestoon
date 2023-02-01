@@ -48,7 +48,7 @@ function Project() {
 					 پروژه های محبوب <i className="fas fa-plus"></i>
 					<span className="heading-shadow-text">پروژه های ما</span>
 				</span>
-                        <h2 className="title">پروژه های ما را کاوش کنید</h2>
+                        <h2 className="title">تامین مالی جمعی</h2>
                     </div>
                     <div className="row project-slider-one project-items project-style-one no-shadow">
                         <Slider {...settings}>

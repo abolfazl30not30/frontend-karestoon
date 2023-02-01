@@ -1284,7 +1284,11 @@ a:hover {
 }
 
 .footer-widgets .widget.about-widget .footer-logo {
+	width: 70%;
 	margin-bottom: 40px;
+}
+.footer-widgets .widget.about-widget .footer-logo img{
+	border-radius: 100%;
 }
 
 .footer-widgets .widget.about-widget p {
@@ -2347,7 +2351,7 @@ a:hover {
 /*======= Emergency Project.jsx With CTA =======*/
 .emergency-project-with-cta .emergency-project-slider {
 	background-color: var(--primary-soft-color);
-	padding-bottom: 110px;
+	padding-bottom: 230px;
 	padding-top: 55px;
 	position: relative;
 	z-index: 1;

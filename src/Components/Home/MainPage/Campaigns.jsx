@@ -46,7 +46,7 @@ function Campaigns() {
                     <div className="container">
                         <div className="common-heading text-center mb-60">
 					<span className="tagline">
-						<i className="fas fa-plus"></i> پروژه های خیریه
+						<i className="fas fa-plus"></i>مورد اعتماد بزرگترین شرکت های خصوصی و رویدادها در شهر
 						<span className="heading-shadow-text">عضو شوید</span>
 					</span>
                             <h2 className="title">کمپین های ما</h2>
@@ -68,7 +68,7 @@ function Campaigns() {
                                             </div>
 
                                             <h5 className="title">
-                                                <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
+                                                <a href="">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
                                                     از صنعت </a>
                                             </h5>
                                             <div className="project-stats">

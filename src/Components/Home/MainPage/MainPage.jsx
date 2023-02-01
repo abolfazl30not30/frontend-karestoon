@@ -5,6 +5,8 @@ import About from "./About";
 import Project from "./Project";
 import Campaigns from "./Campaigns"
 import Footer from "./Footer";
+import Partners from "./Partners";
+import Counter from "./Counter";
 function MainPage() {
 
     return (
@@ -14,6 +16,8 @@ function MainPage() {
             <About/>
             <Project/>
             <Campaigns/>
+            <Counter/>
+            <Partners/>
             <Footer/>
         </>
     );
