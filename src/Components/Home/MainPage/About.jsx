@@ -1,38 +1,11 @@
 import React from 'react';
 import aboutShape from "../../../assets/img/about/about-shape.png"
 import manWithLaptop from "../../../assets/img/about/man-with-laptop.png"
-function MainPage() {
+function About() {
 
     return (
         <>
             <section className="about-section-two">
-                <div className="about-form-area">
-                    <div className="container">
-                        <div className="about-donation-form">
-                            <div className="donation-heading">
-                                <h3 className="title">دست به دست هم</h3>
-                                <span className="shadow-text">حمایت</span>
-                            </div>
-                            <form action="#">
-                                <div className="form-wrap">
-                                    <ul className="donation-amount">
-                                        <li>5,000</li>
-                                        <li>50,000</li>
-                                        <li>180,000</li>
-                                        <li>500,000</li>
-                                        <li>1,000,000</li>
-                                    </ul>
-                                    <button type="submit" className="main-btn btn-white">هم اکنون کمک کنید <i
-                                        className="far fa-arrow-left"></i></button>
-                                </div>
-                            </form>
-                        </div>
-                        <div className="about-video wow fadeInDown" data-wow-delay="0.2s">
-                            <a href="http://www.youtube.com/watch?v=XSGBVzeBUbk" className="video-btn" data-lity><i
-                                className="fas fa-play"></i></a>
-                        </div>
-                    </div>
-                </div>
                 <div className="about-text-area">
                     <div className="container">
                         <div className="row align-items-end justify-content-xl-start">
@@ -43,13 +16,10 @@ function MainPage() {
 									<span className="float-right"><i className="fas fa-plus"></i> درباره ما</span>
 									<span className="heading-shadow-text">درباره ما</span>
 								</span>
-                                        <h2 className="title text-right">ما به نحوه بهبود بازاریابی محصول شما کمک می
-                                            کنیم</h2>
+                                        <h2 className="title text-right">ما در با خانمان دست یاری شما هستیم…</h2>
                                     </div>
                                     <p>
-                                        لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از
-                                        طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که
-                                        لازم است، و برای شرایط
+                                        باخانمان یک شرکت غیرانتفاعی و مستقل است. این شرکت فعالیت خود را از سال 1398 آغاز کرده است. این شرکت اولین شرکت خیریه ای در حوزه تامین مالی جمعی و تامین تخصص جمعی در ایران است. خیرین و متخصصان متناسب با توان خود در طرح های معرفی شده از این شرکت فعالیت می کنند.
                                     </p>
                                     <ul className="check-list mt-30 text-right">
                                         <li>
@@ -85,4 +55,4 @@ function MainPage() {
     );
 }
 
-export default MainPage
+export default About

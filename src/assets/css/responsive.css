@@ -73,7 +73,7 @@
 		max-width: 155px;
 	}
 
-    /*======= Project =======*/
+    /*======= Project.jsx =======*/
 	.project-items.project-style-one.project-slider-one .content {
 		padding: 55px 30px 35px;
 	}
@@ -174,7 +174,7 @@
 		left: 8%;
 		top: 59%;
 	}
-    /*======= Project =======*/
+    /*======= Project.jsx =======*/
 	.project-items .project-item .title {
 		font-size: 18px;
 	}
@@ -312,7 +312,7 @@
 		height: 120px;
 	}
 
-    /*======= Project Item =======*/
+    /*======= Project.jsx Item =======*/
 	.project-items.project-style-three .project-item .title {
 		font-size: 20px;
 	}
@@ -359,7 +359,7 @@
 		right: -25px;
 	}
 
-    /*======= Project Details =======*/
+    /*======= Project.jsx Details =======*/
 	.project-form .donation-amount li {
 		width: 85px;
 		height: 40px;
@@ -594,7 +594,7 @@
 		padding-left: 0;
 	}
 
-    /*======= Project Details =======*/
+    /*======= Project.jsx Details =======*/
 	.project-summery {
 		padding: 0;
 	}
@@ -825,7 +825,7 @@
 		padding-top: 30px;
 	}
 
-	/*======= Project =======*/
+	/*======= Project.jsx =======*/
 	.project-items.project-style-two .project-item {
 		-webkit-box-orient: vertical;
 		-webkit-box-direction: normal;
@@ -845,7 +845,7 @@
 		min-height: 300px;
 	}
 
-    /*======= Project Details =======*/
+    /*======= Project.jsx Details =======*/
 	.project-summery .project-title {
 		font-size: 25px;
 	}
@@ -1072,7 +1072,7 @@
 		font-size: 14px;
 		margin-right: 1px;
 	}
-    /*======= Project =======*/
+    /*======= Project.jsx =======*/
 	.project-items .project-item .content {
 		padding: 55px 30px 35px;
 	}
@@ -1452,7 +1452,7 @@
 		min-height: 350px;
 	}
 
-    /*======= Project Item =======*/
+    /*======= Project.jsx Item =======*/
 	.project-items.project-style-three .project-item .thumb {
 		height: 400px;
 	}
@@ -1483,7 +1483,7 @@
 		padding: 30px;
 	}
 
-    /*======= Project Details =======*/
+    /*======= Project.jsx Details =======*/
 	.project-summery .project-title {
 		font-size: 20px;
 	}

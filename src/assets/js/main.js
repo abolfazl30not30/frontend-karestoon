@@ -7,9 +7,9 @@
     ## Sticky Header
     ## Header Breakpoint Resize
     ## Counter Up
-    ## Project Progress Bar
-    ## Project Slider One
-    ## Project Slider Two
+    ## Project.jsx Progress Bar
+    ## Project.jsx Slider One
+    ## Project.jsx Slider Two
     ## Team Slider
     ## Active Tooltip
     ## Image Block slider
@@ -125,7 +125,7 @@
         });
     }
 
-    // ===== Project Progress Bar
+    // ===== Project.jsx Progress Bar
     function projectProgressBar() {
         $('.project-item').on('inview', function (event, isInView) {
             if (isInView) {
@@ -140,7 +140,7 @@
         });
     }
 
-    // ===== Project Slider One
+    // ===== Project.jsx Slider One
     function projectSliderOne() {
         $('.project-slider-one').slick({
             infinite: true,
@@ -180,7 +180,7 @@
         });
     }
 
-    // ===== Project Slider Two
+    // ===== Project.jsx Slider Two
     function projectSliderTwo() {
         $('.project-slider-two').slick({
             infinite: true,

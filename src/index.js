@@ -10,7 +10,8 @@ import './assets/css/font-awesome.min.css'
 import './assets/css/lity.min.css'
 import './assets/css/slick.min.css'
 import "./style/index.css"
-
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 ReactDOM.render(
     <React.StrictMode>
         <App />

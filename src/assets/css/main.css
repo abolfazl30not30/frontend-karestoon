@@ -21,16 +21,16 @@
     ## Fancy Icon Box
     ## Fancy Icon List
     ## Icon Boxes
-    ## Project
-        ## Project Item
-        ## Project One
-        ## Project Two
-        ## Project Three
-        ## Project Four
-        ## Project Section
-        Emergency Project With CTA
-        ## Project Slider Arrow
-        ## Project Details
+    ## Project.jsx
+        ## Project.jsx Item
+        ## Project.jsx One
+        ## Project.jsx Two
+        ## Project.jsx Three
+        ## Project.jsx Four
+        ## Project.jsx Section
+        Emergency Project.jsx With CTA
+        ## Project.jsx Slider Arrow
+        ## Project.jsx Details
     ## Counter
         ## Counter Boxes
         ## Counter Section
@@ -1769,8 +1769,8 @@ a:hover {
 }
 
 .common-heading .title {
-	font-size: 42px;
-	
+	font-size: 36px;
+	font-weight: bold;
 }
 
 .common-heading.text-center .heading-shadow-text {
@@ -2014,7 +2014,7 @@ a:hover {
 	-webkit-text-stroke: 1px var(--white);
 }
 
-/*======= Project Item =======*/
+/*======= Project.jsx Item =======*/
 .project-items .project-item {
 	position: relative;
 	text-align: right;
@@ -2139,7 +2139,7 @@ a:hover {
 	margin-right: 8px;
 }
 
-/*======= Project One =======*/
+/*======= Project.jsx One =======*/
 .project-items.project-style-one .project-item .cats {
 	position: absolute;
 	right: 40px;
@@ -2159,7 +2159,7 @@ a:hover {
 	font-size: 18px;
 }
 
-/*======= Project Two =======*/
+/*======= Project.jsx Two =======*/
 .project-items.project-style-two .project-item {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2186,7 +2186,7 @@ a:hover {
 	margin-bottom: 30px;
 }
 
-/*======= Project Three =======*/
+/*======= Project.jsx Three =======*/
 .project-items.project-style-three .project-item .thumb {
 	position: relative;
 	height: 470px;
@@ -2293,7 +2293,7 @@ a:hover {
 	margin-top: 15px;
 }
 
-/*======= Project Four =======*/
+/*======= Project.jsx Four =======*/
 .project-items.project-style-four .project-item {
 	display: -webkit-box;
 	display: -ms-flexbox;
@@ -2319,7 +2319,7 @@ a:hover {
 	font-size: 18px;
 }
 
-/*======= Project Section =======*/
+/*======= Project.jsx Section =======*/
 .project-section.project-section-extra-gap {
 	padding-top: 130px;
 	padding-bottom: 210px;
@@ -2344,7 +2344,7 @@ a:hover {
 	background-color: var(--secondary-color);
 }
 
-/*======= Emergency Project With CTA =======*/
+/*======= Emergency Project.jsx With CTA =======*/
 .emergency-project-with-cta .emergency-project-slider {
 	background-color: var(--primary-soft-color);
 	padding-bottom: 110px;
@@ -2374,7 +2374,7 @@ a:hover {
 	z-index: 2;
 }
 
-/*======= Project Slider Arrow =======*/
+/*======= Project.jsx Slider Arrow =======*/
 .project-slider-two .slick-arrow {
 	width: 55px;
 	height: 55px;
@@ -2454,7 +2454,7 @@ a:hover {
 	background-color: var(--primary-color);
 }
 
-/*======= Project Details =======*/
+/*======= Project.jsx Details =======*/
 .project-summery {
 	padding: 0 40px 0 30px;
 }
@@ -4263,7 +4263,7 @@ a:hover {
 .about-section-two .about-text-area .container {
 	position: relative;
 	z-index: 1;
-	padding-top: 140px;
+	padding-top: 111px;
 }
 
 .about-section-two .about-text-area .about-text {

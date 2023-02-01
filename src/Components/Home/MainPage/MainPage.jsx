@@ -2,6 +2,7 @@ import React from 'react';
 import Header from "./Header";
 import HeroArea from "./HeroArea";
 import About from "./About";
+import Project from "./Project";
 
 function MainPage() {
 
@@ -10,6 +11,7 @@ function MainPage() {
             <Header/>
             <HeroArea/>
             <About/>
+            <Project/>
         </>
     );
 }
