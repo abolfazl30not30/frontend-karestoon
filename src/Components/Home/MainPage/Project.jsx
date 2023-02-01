@@ -12,7 +12,8 @@ function Project() {
         slidesToScroll: 1,
         draggable:true,
         autoplay:true,
-        autoplaySpeed:3000,
+        arrows:false,
+        autoplaySpeed:1000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -25,7 +26,7 @@ function Project() {
                 breakpoint: 768,
                 settings: {
                     slidesToShow: 2,
-                    slidesToScroll: 21,
+                    slidesToScroll: 1,
                     initialSlide: 2
                 }
             },
