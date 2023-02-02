@@ -14,9 +14,12 @@
 
 .input {
     border-radius: 20px;
+    z-index: 1;
 }
 
 .input-container {
+    position: relative;
+    overflow: hidden;
     /*background-image: url("../img/hero/hero-line-2.png");*/
     /*background-size: cover;*/
     background-color: #e3f6e7;
@@ -26,9 +29,17 @@
 
 .back-pic {
     position: absolute;
+    /*z-index: -1;*/
+    right: 10px;
     top: 0;
+    opacity: 0.2;
 }
 
 .login-img {
     height: 100%;
+}
+
+.otp {
+    position: relative;
+    overflow: hidden;
 }

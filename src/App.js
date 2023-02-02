@@ -7,7 +7,7 @@ import Login from "./Components/Signup/Login";
 function App() {
   return (
     <>
-        {/*<MainPage/>*/}
+        <MainPage/>
         <Signup />
         <Login />
     </>

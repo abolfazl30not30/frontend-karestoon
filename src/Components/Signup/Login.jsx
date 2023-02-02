@@ -21,6 +21,9 @@ const Login = () => {
                     <div className={'input-container col-6 d-flex'}>
 
                         <div className={'col-12'}>
+                            <div className={'back-pic'}>
+                                <img src={backPic} alt={'backPic'}/>
+                            </div>
                             <div className={'d-flex justify-content-center'}>
                                 <h2 className={'text-nowrap mt-4'}>
                                     Salam Charity
@@ -45,6 +48,7 @@ const Login = () => {
                                     onChange={handleChange}
                                     numInputs={4}
                                     separator={<span className={'mx-2'}/>}
+                                    className={'otp'}
                                 />
 
                             </div>
