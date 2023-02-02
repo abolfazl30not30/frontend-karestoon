@@ -1,0 +1,33 @@
+.main-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container1 {
+    /*background-color: #e5e5e5;*/
+    height: 50vh;
+    width: 700px;
+    /*margin-top: 100px;*/
+    border-radius: 20px;
+}
+
+.input {
+    border-radius: 20px;
+}
+
+.input-container {
+    background-image: url("../img/hero/hero-line-2.png");
+    background-size: cover;
+    background-color: #e3f6e7;
+}
+
+.back-pic {
+    position: absolute;
+    top: 0;
+}
+
+.login-img {
+    height: 100%;
+}
