@@ -32,7 +32,7 @@ const Signup = () => {
                             </div>
 
                             <div className={'d-flex justify-content-center'}>
-                                <a href="#" className="main-btn mt-25">ورود <i
+                                <a href="#" className="main-btn mt-10">ورود <i
                                     className="far fa-arrow-left"></i></a>
                             </div>
                         </div>
