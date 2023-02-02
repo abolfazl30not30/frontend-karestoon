@@ -33,7 +33,13 @@ function Sidebar() {
                     <div className="d-flex flex-row align-items-center sidebar-list-item">
                         <UilMoneyBill/>
                         <div className="sidebar-list-item-title">
-                            حمایت های من
+                            کمپین ها
+                        </div>
+                    </div>
+                    <div className="d-flex flex-row align-items-center sidebar-list-item">
+                        <UilMoneyBill/>
+                        <div className="sidebar-list-item-title">
+                            ساخت کمپین
                         </div>
                     </div>
                     <div className="d-flex flex-row align-items-center sidebar-list-item">

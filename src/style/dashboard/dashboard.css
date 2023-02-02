@@ -1,9 +1,10 @@
 * {
     text-align: right;
-    font-family: Vazirmatn, sans-serif;
+    font-family: dana,sans-serif !important;
 }
 body {
     background-color: #fcfcfd;
+
 }
 
 
@@ -158,3 +159,20 @@ body {
     }
 }
 
+.box {
+    background-color: #fff;
+    width: 100%;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 20px 0 #4c577d05;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+.box-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.box-content {
+    margin-top: 2rem;
+}

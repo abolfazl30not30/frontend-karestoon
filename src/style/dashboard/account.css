@@ -1,0 +1,12 @@
+.account-box {
+    background-color: #fff;
+    width: 100%;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 20px 0 #4c577d05;
+}
+.button-edit {
+    background-color: #ffc107 !important;
+    color: #fff !important;
+}

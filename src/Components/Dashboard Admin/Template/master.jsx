@@ -5,17 +5,17 @@ import Footer from "./footer";
 import Main from "../Pages/main";
 import Payment from "../Pages/Payment";
 import Account from "../Pages/account"
+import CreateCrowdFunding from "../Pages/CreateCrowdFunding";
 import "../../../style/dashboard/dashboard.css"
 
-function DashboardUser() {
+function DashboardAdmin() {
     return (
         <>
-            {/*<div>master</div>*/}
             <div className="d-flex flex-column" dir="rtl">
                 <Sidebar />
                 <Navbar />
                 <div className="main">
-                    <Payment />
+                    <CreateCrowdFunding />
                 </div>
 
                 <Footer />
@@ -29,4 +29,4 @@ function DashboardUser() {
     );
 }
 
-export default DashboardUser
+export default DashboardAdmin
