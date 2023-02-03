@@ -10,20 +10,15 @@ import "../../../style/dashboard/dashboard.css"
 function DashboardUser() {
     return (
         <>
-            {/*<div>master</div>*/}
+
             <div className="d-flex flex-column" dir="rtl">
                 <Sidebar />
                 <Navbar />
                 <div className="main">
                     <Payment />
                 </div>
-
                 <Footer />
             </div>
-
-
-
-
         </>
 
     );
