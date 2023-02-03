@@ -6,8 +6,7 @@ import DashboardAdmin from "./Components/Dashboard Admin/Template/master"
 function App() {
   return (
     <>
-        {/*<MainPage/>*/}
-        <DashboardAdmin />
+        <MainPage/>
     </>
   );
 }
