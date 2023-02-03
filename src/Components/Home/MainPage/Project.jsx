@@ -1,8 +1,11 @@
 import React from 'react';
-import projectImg1 from "../../../assets/img/project/project-grid-01.jpg"
-import img1 from "../../../assets/img/author-thumbs/01.jpg"
-import Slider from "react-slick";
+import projectImg1 from "../../../assets/img/my-wish-for-you-1600x900-1.jpg"
+import projectImg2 from "../../../assets/img/bazgasht-be-zandegi-150.jpg"
+import projectImg3 from "../../../assets/img/divarmehrabani.jpg"
 
+import Slider from "react-slick";
+import ProgressBar from 'react-bootstrap/ProgressBar';
+import {Link} from "react-router-dom"
 function Project() {
     const settings = {
         dots: false,
@@ -58,28 +61,93 @@ function Project() {
                                          style={{backgroundImage: `url(${projectImg1})`}}></div>
                                     <div className="content">
                                         <div className="cats">
-                                            <a href="#">ویدیو و فیلم</a>
-                                        </div>
-                                        <div className="author">
-                                            <img src={img1} alt="Thumb"/>
-                                            <a href="#">جیمز بارو</a>
+                                            <a href="#">تامين مالي جمعي</a>
                                         </div>
                                         <h5 className="title">
-                                            <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از
-                                                صنعت </a>
+                                            <a href="">بازگشت به زندگی</a>
                                         </h5>
                                         <div className="project-stats">
                                             <div className="stats-value">
-                                                <span className="value-title"> <span
-                                                    className="value">10,000 تومان</span> : هدف</span>
-                                                <span className="stats-percentage">79%</span>
+                                                <span className="value">150,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ مورد نياز</span>
                                             </div>
-                                            <div className="stats-bar" data-value="79">
-                                                <div className="bar-line"></div>
+                                            <div className="stats-value">
+                                                <span className="value">15,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ حمايت شده</span>
+                                            </div>
+
+                                            <div className="stats-bar" data-value="">
+                                                <ProgressBar variant="success" now={60} label={`${60}%`} />
                                             </div>
                                         </div>
                                         <span className="date"><i className="far fa-calendar-alt"></i> 1401/09/18</span>
+                                        <div className="mt-4 d-flex justify-content-center">
+                                            <a href="#" className={"main-btn px-5"} >حمايت ميكنم</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="px-3 col-md-3 col-sm-4 col-xl-12">
+                                <div className="project-item">
+                                    <div className="thumb"
+                                         style={{backgroundImage: `url(${projectImg2})`}}></div>
+                                    <div className="content">
+                                        <div className="cats">
+                                            <a href="#">تامين مالي جمعي</a>
+                                        </div>
+                                        <h5 className="title">
+                                            <a href="">بازگشت به زندگی</a>
+                                        </h5>
+                                        <div className="project-stats">
+                                            <div className="stats-value">
+                                                <span className="value">150,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ مورد نياز</span>
+                                            </div>
+                                            <div className="stats-value">
+                                                <span className="value">15,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ حمايت شده</span>
+                                            </div>
+
+                                            <div className="stats-bar" data-value="">
+                                                <ProgressBar variant="success" now={60} label={`${60}%`} />
+                                            </div>
+                                        </div>
+                                        <span className="date"><i className="far fa-calendar-alt"></i> 1401/09/18</span>
+                                        <div className="mt-4 d-flex justify-content-center">
+                                            <a href="#" className={"main-btn px-5"} >حمايت ميكنم</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="px-3 col-md-3 col-sm-4 col-xl-12">
+                                <div className="project-item">
+                                    <div className="thumb"
+                                         style={{backgroundImage: `url(${projectImg3})`}}></div>
+                                    <div className="content">
+                                        <div className="cats">
+                                            <a href="#">تامين مالي جمعي</a>
+                                        </div>
+                                        <h5 className="title">
+                                            <a href="">بازگشت به زندگی</a>
+                                        </h5>
+                                        <div className="project-stats">
+                                            <div className="stats-value">
+                                                <span className="value">150,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ مورد نياز</span>
+                                            </div>
+                                            <div className="stats-value">
+                                                <span className="value">15,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ حمايت شده</span>
+                                            </div>
+
+                                            <div className="stats-bar" data-value="">
+                                                <ProgressBar variant="success" now={60} label={`${60}%`} />
+                                            </div>
+                                        </div>
+                                        <span className="date"><i className="far fa-calendar-alt"></i> 1401/09/18</span>
+                                        <div className="mt-4 d-flex justify-content-center">
+                                            <a href="#" className={"main-btn px-5"} >حمايت ميكنم</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -89,123 +157,61 @@ function Project() {
                                          style={{backgroundImage: `url(${projectImg1})`}}></div>
                                     <div className="content">
                                         <div className="cats">
-                                            <a href="#">ویدیو و فیلم</a>
-                                        </div>
-                                        <div className="author">
-                                            <img src={img1} alt="Thumb"/>
-                                            <a href="#">جیمز بارو</a>
+                                            <a href="#">تامين مالي جمعي</a>
                                         </div>
                                         <h5 className="title">
-                                            <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از
-                                                صنعت </a>
+                                            <a href="">بازگشت به زندگی</a>
                                         </h5>
                                         <div className="project-stats">
                                             <div className="stats-value">
-                                                <span className="value-title"> <span
-                                                    className="value">10,000 تومان</span> : هدف</span>
-                                                <span className="stats-percentage">79%</span>
+                                                <span className="value">150,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ مورد نياز</span>
                                             </div>
-                                            <div className="stats-bar" data-value="79">
-                                                <div className="bar-line"></div>
-                                            </div>
-                                        </div>
-                                        <span className="date"><i className="far fa-calendar-alt"></i> 1401/09/18</span>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="px-4 col-md-3 col-sm-4 col-xl-12">
-                                <div className="project-item">
-                                    <div className="thumb"
-                                         style={{backgroundImage: `url(${projectImg1})`}}></div>
-                                    <div className="content">
-                                        <div className="cats">
-                                            <a href="#">ویدیو و فیلم</a>
-                                        </div>
-                                        <div className="author">
-                                            <img src={img1} alt="Thumb"/>
-                                            <a href="#">جیمز بارو</a>
-                                        </div>
-                                        <h5 className="title">
-                                            <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از
-                                                صنعت </a>
-                                        </h5>
-                                        <div className="project-stats">
                                             <div className="stats-value">
-                                                <span className="value-title"> <span
-                                                    className="value">10,000 تومان</span> : هدف</span>
-                                                <span className="stats-percentage">79%</span>
+                                                <span className="value">15,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ حمايت شده</span>
                                             </div>
-                                            <div className="stats-bar" data-value="79">
-                                                <div className="bar-line"></div>
-                                            </div>
-                                        </div>
-                                        <span className="date"><i className="far fa-calendar-alt"></i> 1401/09/18</span>
-                                    </div>
-                                </div>
-                            </div>
 
-                            <div className="px-4 col-md-3 col-sm-4 col-xl-12">
-                                <div className="project-item">
-                                    <div className="thumb"
-                                         style={{backgroundImage: `url(${projectImg1})`}}></div>
-                                    <div className="content">
-                                        <div className="cats">
-                                            <a href="#">ویدیو و فیلم</a>
-                                        </div>
-                                        <div className="author">
-                                            <img src={img1} alt="Thumb"/>
-                                            <a href="#">جیمز بارو</a>
-                                        </div>
-                                        <h5 className="title">
-                                            <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از
-                                                صنعت </a>
-                                        </h5>
-                                        <div className="project-stats">
-                                            <div className="stats-value">
-                                                <span className="value-title"> <span
-                                                    className="value">10,000 تومان</span> : هدف</span>
-                                                <span className="stats-percentage">79%</span>
-                                            </div>
-                                            <div className="stats-bar" data-value="79">
-                                                <div className="bar-line"></div>
+                                            <div className="stats-bar" data-value="">
+                                                <ProgressBar variant="success" now={60} label={`${60}%`} />
                                             </div>
                                         </div>
                                         <span className="date"><i className="far fa-calendar-alt"></i> 1401/09/18</span>
+                                        <div className="mt-4 d-flex justify-content-center">
+                                            <a href="#" className={"main-btn px-5"} >حمايت ميكنم</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
-                            <div className="px-4 col-md-3 col-sm-4 col-xl-12">
+                            <div className="px-3 col-md-3 col-sm-4 col-xl-12">
                                 <div className="project-item">
                                     <div className="thumb"
                                          style={{backgroundImage: `url(${projectImg1})`}}></div>
                                     <div className="content">
                                         <div className="cats">
-                                            <a href="#">ویدیو و فیلم</a>
-                                        </div>
-                                        <div className="author">
-                                            <img src={img1} alt="Thumb"/>
-                                            <a href="#">جیمز بارو</a>
+                                            <a href="#">تامين مالي جمعي</a>
                                         </div>
                                         <h5 className="title">
-                                            <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                از
-                                                صنعت </a>
+                                            <a href="">بازگشت به زندگی</a>
                                         </h5>
                                         <div className="project-stats">
                                             <div className="stats-value">
-                                                <span className="value-title"> <span
-                                                    className="value">10,000 تومان</span> : هدف</span>
-                                                <span className="stats-percentage">79%</span>
+                                                <span className="value">150,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ مورد نياز</span>
                                             </div>
-                                            <div className="stats-bar" data-value="79">
-                                                <div className="bar-line"></div>
+                                            <div className="stats-value">
+                                                <span className="value">15,000,000 تومان</span>
+                                                <span className="value-title">: مبلغ حمايت شده</span>
+                                            </div>
+
+                                            <div className="stats-bar" data-value="">
+                                                <ProgressBar variant="success" now={60} label={`${60}%`} />
                                             </div>
                                         </div>
                                         <span className="date"><i className="far fa-calendar-alt"></i> 1401/09/18</span>
+                                        <div className="mt-4 d-flex justify-content-center">
+                                            <a href="#" className={"main-btn px-5"} >حمايت ميكنم</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>

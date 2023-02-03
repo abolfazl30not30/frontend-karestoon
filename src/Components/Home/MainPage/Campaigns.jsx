@@ -1,5 +1,5 @@
 import React from 'react';
-import img1 from "../../../assets/img/author-thumbs/01.jpg"
+import img1 from "../../../assets/img/coin-wooden-table_1150-17730.webp"
 import Slider from "react-slick";
 
 function Campaigns() {
@@ -59,25 +59,28 @@ function Campaigns() {
                                              style={{backgroundImage:`url(${img1})`}}></div>
                                         <div className="content">
                                             <div className="cats">
-                                                <a href="#">کووید - 19</a>
-                                            </div>
-
-                                            <div className="author">
-                                                <img src={img1} alt="Thumb"/>
-                                                <a href="#">جیمز بارو</a>
+                                                <a href="#">آبان 25</a>
                                             </div>
 
                                             <h5 className="title">
-                                                <a href="">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                    از صنعت </a>
+                                                <a href="">سلام بر آرزو ها</a>
                                             </h5>
-                                            <div className="project-stats">
-                                                <div className="stats-value">
-                                                    <span className="value-title">هدف <span className="value">$59,689</span></span>
-                                                    <span className="stats-percentage">83%</span>
+                                            <div className="countdown">
+                                                <div className="timer-count">
+                                                    <div className="timer-value">142</div>
+                                                    <div className="timer-text">روز</div>
                                                 </div>
-                                                <div className="stats-bar" data-value="90">
-                                                    <div className="bar-line"></div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">2</div>
+                                                    <div className="timer-text">ساعت</div>
+                                                </div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">16</div>
+                                                    <div className="timer-text">دقيقه</div>
+                                                </div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">17</div>
+                                                    <div className="timer-text">ثانيه</div>
                                                 </div>
                                             </div>
                                             <span className="date"><i className="far fa-calendar-alt"></i> 1401/10/06</span>
@@ -90,28 +93,31 @@ function Campaigns() {
                                              style={{backgroundImage:`url(${img1})`}}></div>
                                         <div className="content">
                                             <div className="cats">
-                                                <a href="#">کووید - 19</a>
-                                            </div>
-
-                                            <div className="author">
-                                                <img src={img1} alt="Thumb"/>
-                                                <a href="#">جیمز بارو</a>
+                                                <a href="#">آبان 25</a>
                                             </div>
 
                                             <h5 className="title">
-                                                <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                    از صنعت </a>
+                                                <a href="">سلام بر آرزو ها</a>
                                             </h5>
-                                            <div className="project-stats">
-                                                <div className="stats-value">
-                                                    <span className="value-title">هدف <span className="value">$59,689</span></span>
-                                                    <span className="stats-percentage">83%</span>
+                                            <div className="countdown">
+                                                <div className="timer-count">
+                                                    <div className="timer-value">142</div>
+                                                    <div className="timer-text">روز</div>
                                                 </div>
-                                                <div className="stats-bar" data-value="90">
-                                                    <div className="bar-line"></div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">2</div>
+                                                    <div className="timer-text">ساعت</div>
+                                                </div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">16</div>
+                                                    <div className="timer-text">دقيقه</div>
+                                                </div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">17</div>
+                                                    <div className="timer-text">ثانيه</div>
                                                 </div>
                                             </div>
-                                            <span className="date"><i className="far fa-calendar-alt"></i> 1401/02/09</span>
+                                            <span className="date"><i className="far fa-calendar-alt"></i> 1401/10/06</span>
                                         </div>
                                     </div>
                                 </div>
@@ -121,28 +127,31 @@ function Campaigns() {
                                              style={{backgroundImage:`url(${img1})`}}></div>
                                         <div className="content">
                                             <div className="cats">
-                                                <a href="#">کووید - 19</a>
-                                            </div>
-
-                                            <div className="author">
-                                                <img src={img1} alt="Thumb"/>
-                                                <a href="#">جیمز بارو</a>
+                                                <a href="#">آبان 25</a>
                                             </div>
 
                                             <h5 className="title">
-                                                <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                    از صنعت </a>
+                                                <a href="">سلام بر آرزو ها</a>
                                             </h5>
-                                            <div className="project-stats">
-                                                <div className="stats-value">
-                                                    <span className="value-title">هدف <span className="value">$59,689</span></span>
-                                                    <span className="stats-percentage">83%</span>
+                                            <div className="countdown">
+                                                <div className="timer-count">
+                                                    <div className="timer-value">142</div>
+                                                    <div className="timer-text">روز</div>
                                                 </div>
-                                                <div className="stats-bar" data-value="90">
-                                                    <div className="bar-line"></div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">2</div>
+                                                    <div className="timer-text">ساعت</div>
+                                                </div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">16</div>
+                                                    <div className="timer-text">دقيقه</div>
+                                                </div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">17</div>
+                                                    <div className="timer-text">ثانيه</div>
                                                 </div>
                                             </div>
-                                            <span className="date"><i className="far fa-calendar-alt"></i> 1400/05/07</span>
+                                            <span className="date"><i className="far fa-calendar-alt"></i> 1401/10/06</span>
                                         </div>
                                     </div>
                                 </div>
@@ -152,28 +161,31 @@ function Campaigns() {
                                              style={{backgroundImage:`url(${img1})`}}></div>
                                         <div className="content">
                                             <div className="cats">
-                                                <a href="#">کووید - 19</a>
-                                            </div>
-
-                                            <div className="author">
-                                                <img src={img1} alt="Thumb"/>
-                                                <a href="#">جیمز بارو</a>
+                                                <a href="#">آبان 25</a>
                                             </div>
 
                                             <h5 className="title">
-                                                <a href="project-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم
-                                                    از صنعت </a>
+                                                <a href="">سلام بر آرزو ها</a>
                                             </h5>
-                                            <div className="project-stats">
-                                                <div className="stats-value">
-                                                    <span className="value-title">هدف <span className="value">$59,689</span></span>
-                                                    <span className="stats-percentage">83%</span>
+                                            <div className="countdown">
+                                                <div className="timer-count">
+                                                    <div className="timer-value">142</div>
+                                                    <div className="timer-text">روز</div>
                                                 </div>
-                                                <div className="stats-bar" data-value="90">
-                                                    <div className="bar-line"></div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">2</div>
+                                                    <div className="timer-text">ساعت</div>
+                                                </div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">16</div>
+                                                    <div className="timer-text">دقيقه</div>
+                                                </div>
+                                                <div className="timer-count">
+                                                    <div className="timer-value">17</div>
+                                                    <div className="timer-text">ثانيه</div>
                                                 </div>
                                             </div>
-                                            <span className="date"><i className="far fa-calendar-alt"></i> 1400/10/19</span>
+                                            <span className="date"><i className="far fa-calendar-alt"></i> 1401/10/06</span>
                                         </div>
                                     </div>
                                 </div>

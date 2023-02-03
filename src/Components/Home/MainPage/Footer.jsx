@@ -15,7 +15,7 @@ function MainPage() {
                                             <img src={logo} alt="salam"/>
                                         </div>
                                         <p>
-                                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت
+                                            با خانمان همیشه در کنار شما...
                                         </p>
                                         <div className="newsletter-form">
                                             <h5 className="form-title">عضویت در خبرنامه</h5>
@@ -59,7 +59,7 @@ function MainPage() {
                                                 <span className="icon"><i className="far fa-phone"></i></span>
                                                 <span className="info">
 											<span className="info-title">شماره تماس</span>
-											<a href="#">+98(123) 45 67</a>
+											<a href="#">021-29905285</a>
 										</span>
                                             </li>
                                             <li>
@@ -67,14 +67,14 @@ function MainPage() {
                                                 <span className="info">
 											<span className="info-title">ایمیل</span>
 											<a href="#"><span className="__cf_email__"
-                                                              data-cfemail="0f7c7a7f7f607d7b4f68626e6663216c6062">[email&#160;protected]</span></a>
+                                                              data-cfemail="0f7c7a7f7f607d7b4f68626e6663216c6062">info@charity-salam.ir</span></a>
 										</span>
                                             </li>
                                             <li>
                                                 <span className="icon"><i className="far fa-map-marker-alt"></i></span>
                                                 <span className="info">
 											<span className="info-title">آدرس</span>
-											<a href="#">تهران ، میدان آزادی</a>
+											<a href="#"> تهران - مرکز رشد و نوآوری دانشگاه شهید بهشتی</a>
 										</span>
                                             </li>
                                         </ul>
@@ -94,7 +94,7 @@ function MainPage() {
                                     </ul>
                                 </div>
                                 <div className="col-md-6">
-                                    <p className="copyright-text">© 2022 <a href="#">فوندن</a>. تمامی حقوق محفوظ است</p>
+                                    <p className="copyright-text">© 2022 <a href="#">با خانمان</a>. تمامی حقوق محفوظ است</p>
                                 </div>
                             </div>
                         </div>

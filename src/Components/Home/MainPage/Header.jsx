@@ -1,7 +1,26 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import logo from "../../../assets/img/LOGO1-1.jpeg"
 import logoWhite from "../../../assets/img/logo-white.png"
 function Header() {
+    const [isMobile,setIsMobile] = useState(false);
+    const[isOpen,setIsOpne] = useState(false);
+
+    useEffect(() => {
+        if(window.innerWidth <= 768){
+            setIsMobile(true)
+        }else {
+            setIsMobile(false)
+        }
+    }, []);
+
+    function toggleNavbar (){
+        if(isOpen){
+            setIsOpne(false)
+        }else {
+            setIsOpne(true)
+        }
+    }
+
     return (
         <>
             <header className="site-header sticky-header transparent-header topbar-transparent">
@@ -25,7 +44,7 @@ function Header() {
                         </div>
                     </div>
                 </div>
-                <div className="navbar-wrapper">
+                <div className={isMobile ? "navbar-wrapper breakpoint-on" : "navbar-wrapper"}>
                     <div className="container">
                         <div className="navbar-inner">
                             <div className="site-logo">
@@ -56,13 +75,6 @@ function Header() {
                                         </ul>
                                     </li>
                                     <li>
-                                        <a href="news-standard.html">وبلاگ</a>
-                                        <ul className="submenu">
-                                            <li><a href="news-standard.html">استاندارد</a></li>
-                                            <li><a href="news-details.html">جزئیات خبر</a></li>
-                                        </ul>
-                                    </li>
-                                    <li>
                                         <a href="#">صفحه ها
                                             <span className="dd-trigger">
                                                 <i className="far fa-angle-down"></i>
@@ -82,54 +94,54 @@ function Header() {
                             </div>
                             <div className="navbar-extra d-flex align-items-center">
                                 <a href="#" className="main-btn nav-btn d-none d-sm-inline-block">
-                                    هم اکنون کمک کنید <i className="far fa-arrow-left"></i>
+                                    ورود | ثبت نام <i className="far fa-arrow-left"></i>
                                 </a>
-                                <a href="#" className="nav-toggler">
+                                <a href="#" onClick={()=>{toggleNavbar()}} className={isOpen ? "nav-toggler panel-opened" : "nav-toggler"}>
                                     <span></span>
                                 </a>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="mobile-menu-panel">
+                <div className={isOpen ? "mobile-menu-panel panel-opened" : "mobile-menu-panel"}>
                     <div className="panel-logo">
                         <a href="#"><img src={logoWhite} alt="Funden"/></a>
                     </div>
                     <ul className="panel-menu">
                         <li className="current">
                             <a href="#">خانه</a>
+                        </li>
+                        <li>
+                            <a href="#">معرفي با خانمان</a>
+                        </li>
+                        <li>
+                            <a href="">رويداد ها</a>
+                        </li>
+                        <li>
+                            <a href="">همياران</a>
+                        </li>
+                        <li>
+                            <a href="#">طرح ها
+                                <span className="dd-trigger">
+                                                <i className="far fa-angle-down"></i>
+                                            </span>
+                            </a>
                             <ul className="submenu">
-                                <li><a href="#">خانه یک</a></li>
-                                <li><a href="#">خانه دو</a></li>
+                                <li><a href="#">تامين مالي جمعی</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">پروژه ها</a>
+                            <a href="#">صفحه ها
+                                <span className="dd-trigger">
+                                                <i className="far fa-angle-down"></i>
+                                            </span>
+                            </a>
                             <ul className="submenu">
-                                <li><a href="#">پروژه یک</a></li>
-                                <li><a href="#">پروژه دو</a></li>
-                                <li><a href="#">پروژه سه</a></li>
-                                <li><a href="#">جزئیات پروژه</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">رویداد ها</a>
-                        </li>
-                        <li>
-                            <a href="#">وبلاگ</a>
-                            <ul className="submenu">
-                                <li><a href="#">استاندارد</a></li>
-                                <li><a href="#">جزئیات خبر</a></li>
-                            </ul>
-                        </li>
-                        <li>
-                            <a href="#">صفحه ها</a>
-                            <ul className="submenu">
-                                <li><a href="#">درباره ما</a></li>
-                                <li><a href="#">درباره سازمان</a></li>
-                                <li><a href="#">اعضای تیم</a></li>
-                                <li><a href="#">جدول قیمت</a></li>
+                                <li><a href="#">اهداف</a></li>
                                 <li><a href="#">سوالات متداول</a></li>
+                                <li><a href="#">ماموریت</a></li>
+                                <li><a href="#">گالری تصاویر</a></li>
+                                <li><a href="#">تیم ما</a></li>
                                 <li><a href="#">نظرات</a></li>
                             </ul>
                         </li>
@@ -137,10 +149,10 @@ function Header() {
                     </ul>
                     <div className="panel-extra">
                         <a href="#" className="main-btn btn-white">
-                            هم اکنون کمک کنید <i className="far fa-arrow-left"></i>
+                            ورود | ثبت نام <i className="far fa-arrow-left"></i>
                         </a>
                     </div>
-                    <a href="#" className="panel-close">
+                    <a href="#" onClick={()=>{toggleNavbar()}} className="panel-close">
                         <i className="fal fa-times"></i>
                     </a>
                 </div>

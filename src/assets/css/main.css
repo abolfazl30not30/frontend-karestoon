@@ -522,7 +522,7 @@ a:hover {
 /*======= Global Classes =======*/
 .main-btn {
 	display: inline-block;
-	font-size: 16px;
+	font-size: 0.8rem;
 	font-weight: 700;
 	line-height: 1.3;
 	text-align: center;
@@ -536,8 +536,8 @@ a:hover {
 	transition: all 0.3s ease-out 0s;
 	color: var(--white);
 	background-color: var(--primary-color);
-	padding: 16px 36px;
-	border-radius: 35px;
+	padding: 0.7rem 1.2rem;
+	border-radius: 2rem;
 	position: relative;
 	z-index: 1;
 	border: 1px solid transparent;
@@ -729,6 +729,7 @@ a:hover {
 	-webkit-box-align: center;
 	-ms-flex-align: center;
 	align-items: center;
+	margin: 0;
 }
 
 .navbar-wrapper .nav-menu ul li {
@@ -754,13 +755,14 @@ a:hover {
 }
 
 .navbar-wrapper .nav-menu a {
-	font-size: 1rem;
+	font-size: 0.8rem;
+	font-weight: 500;
 	line-height: 1.3;
 	color: var(--secondary-color);
 	margin: 0 7px;
+	transition: all 0.3s ease-out 0s;
 	-webkit-transition: all 0.3s ease-out 0s;
 	-o-transition: all 0.3s ease-out 0s;
-	transition: all 0.3s ease-out 0s;
 }
 
 .navbar-wrapper .nav-menu .dd-trigger {
@@ -1277,7 +1279,7 @@ a:hover {
 }
 
 .footer-widgets .widget .widget-title {
-	font-size: 22px;
+	font-size: 1.2rem;
 	letter-spacing: 0;
 	margin-bottom: 25px;
 	color: var(--white);
@@ -1298,7 +1300,7 @@ a:hover {
 }
 
 .footer-widgets .widget .newsletter-form {
-	margin-top: 30px;
+	margin-top: 3rem;
 }
 
 .footer-widgets .widget .newsletter-form .form-title {
@@ -1352,6 +1354,7 @@ a:hover {
 	position: relative;
 	line-height: 1.4;
 	padding-right: 0;
+	font-size: 0.9rem;
 }
 
 .footer-widgets .widget.nav-widget li a::before {
@@ -1409,12 +1412,12 @@ a:hover {
 }
 
 .footer-widgets .widget.contact-widget li .info {
-	font-size: 18px;
+	font-size: 0.9rem;
 	font-weight: 500;
 }
 
 .footer-widgets .widget.contact-widget li .info-title {
-	font-size: 16px;
+	font-size: 1rem;
 	color: #999ca5;
 	display: block;
 	margin-bottom: 2px;
@@ -1432,6 +1435,7 @@ a:hover {
 
 .site-footer .copyright-area .copyright-text a {
 	color: var(--primary-color);
+	font-size: 1rem;
 }
 
 .site-footer .copyright-area .social-icons li {
@@ -2098,11 +2102,13 @@ a:hover {
 .project-items .project-item .stats-value {
 	display: -webkit-box;
 	display: -ms-flexbox;
-	display: flex;
 	-webkit-box-pack: justify;
 	-ms-flex-pack: justify;
 	justify-content: space-between;
-	font-size: 16px;
+	display: flex;
+	font-size: 0.8rem;
+	margin: 0.3rem 0;
+	padding: 0 0 0 1rem;
 }
 
 .project-items .project-item .stats-value .value,
@@ -2115,7 +2121,9 @@ a:hover {
 	width: 100%;
 	background: var(--white);
 	height: 3px;
-	margin-top: 8px;
+	margin-top: 1.2rem;
+	margin-bottom: 1rem;
+	direction: rtl;
 	position: relative;
 }
 
@@ -2133,7 +2141,7 @@ a:hover {
 
 .project-items .project-item .date {
 	margin-top: 20px;
-	font-size: 16px;
+	font-size: 0.8rem;
 	font-weight: 500;
 	color: var(--secondary-color);
 }
@@ -2160,7 +2168,8 @@ a:hover {
 }
 
 .project-items.project-style-one.project-slider-one .title {
-	font-size: 18px;
+	font-size: 1.3rem;
+	font-weight: 800;
 }
 
 /*======= Project.jsx Two =======*/
@@ -2320,7 +2329,29 @@ a:hover {
 }
 
 .project-items.project-style-four .project-item .title {
-	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: bold;
+	word-spacing: -4px;
+}
+.countdown{
+	padding: 11px 12px;
+	text-align: center;
+	background-color: #02a95c;
+	display: flex;
+	border-radius: 14px;
+
+}
+.countdown .timer-count{
+	font-weight: 500;
+	padding: 0 10px;
+	border-right: 1px solid #fff;
+	color: #fff;
+	font-size: 0.8rem;
+}
+.countdown .timer-count:last-child{
+	border-right: none;
+}
+.countdown .timer-count .timer-text{
 }
 
 /*======= Project.jsx Section =======*/
