@@ -1,4 +1,6 @@
 import React from 'react';
+import CountUp from "react-countup";
+import VisibilitySensor from 'react-visibility-sensor';
 
 function Counter() {
 
@@ -14,7 +16,13 @@ function Counter() {
                                 </div>
                                 <div className="content white-color">
                                     <div className="count-wrap">
-                                        <span className="count">3598</span>
+                                        <CountUp end={3598} redraw={true}>
+                                            {({ countUpRef, start }) => (
+                                                <VisibilitySensor onChange={start} delayedCall>
+                                                    <span className="count" ref={countUpRef} />
+                                                </VisibilitySensor>
+                                            )}
+                                        </CountUp>
                                         <span className="suffix">+</span>
                                     </div>
                                     <h6 className="title">پروژه های تکمیل شده</h6>
@@ -28,7 +36,13 @@ function Counter() {
                                 </div>
                                 <div className="content white-color">
                                     <div className="count-wrap">
-                                        <span className="count">9634</span>
+                                        <CountUp end={9634} redraw={true}>
+                                            {({ countUpRef, start }) => (
+                                                <VisibilitySensor onChange={start} delayedCall>
+                                                    <span className="count" ref={countUpRef} />
+                                                </VisibilitySensor>
+                                            )}
+                                        </CountUp>
                                         <span className="suffix">+</span>
                                     </div>
                                     <h6 className="title">حامیان</h6>
@@ -42,7 +56,13 @@ function Counter() {
                                 </div>
                                 <div className="content white-color">
                                     <div className="count-wrap">
-                                        <span className="count">8565</span>
+                                        <CountUp end={8565} redraw={true}>
+                                            {({ countUpRef, start }) => (
+                                                <VisibilitySensor onChange={start} delayedCall>
+                                                    <span className="count" ref={countUpRef} />
+                                                </VisibilitySensor>
+                                            )}
+                                        </CountUp>
                                         <span className="suffix">+</span>
                                     </div>
                                     <h6 className="title">جایزه</h6>
@@ -56,7 +76,13 @@ function Counter() {
                                 </div>
                                 <div className="content white-color">
                                     <div className="count-wrap">
-                                        <span className="count">4756</span>
+                                        <CountUp end={4756} redraw={true}>
+                                            {({ countUpRef, start }) => (
+                                                <VisibilitySensor onChange={start} delayedCall>
+                                                    <span className="count" ref={countUpRef} />
+                                                </VisibilitySensor>
+                                            )}
+                                        </CountUp>
                                         <span className="suffix">+</span>
                                     </div>
                                     <h6 className="title">کمک کننده فعال</h6>

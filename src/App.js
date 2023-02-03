@@ -5,13 +5,14 @@ import DashboardUser from "./Components/Dashboard User/Template/master"
 import DashboardAdmin from "./Components/Dashboard Admin/Template/master"
 import Login from "./Components/Signup/Login";
 import Signup from "./Components/Signup/Signup";
+import ProjectDetails from "./Components/Home/projectDetails/projectDetails";
 
 function App() {
   return (
     <>
         <BrowserRouter>
             <Routes>
-                <Route exact path="/" element={(<MainPage/>)}/>
+                <Route exact path="/" element={(<ProjectDetails/>)}/>
                 <Route exact path="/admin/*" element={(<DashboardAdmin/>)}/>
                 <Route exact path="/login" element={(<Signup/>)}/>
                 <Route exact path="/dashboard/*" element={(<DashboardUser/>)}/>
