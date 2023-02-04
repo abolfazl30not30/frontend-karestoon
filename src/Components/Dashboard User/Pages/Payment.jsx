@@ -1,7 +1,7 @@
 import React,{useState} from 'react';
 import "../../../style/dashboard/payment.css"
 
-function Payment() {
+function ProjectUser() {
     const [donations,setDonations] = useState([
         {
             name : 'برای میلاد',
@@ -63,4 +63,4 @@ function Payment() {
         </>
     );
 }
-export default Payment
+export default ProjectUser

@@ -8,7 +8,7 @@
     overflow-x: auto;
     white-space: nowrap;
 }
-.title-box {
+.payment-box .title-box {
     font-size: 1.2rem;
     font-weight: 600;
 }

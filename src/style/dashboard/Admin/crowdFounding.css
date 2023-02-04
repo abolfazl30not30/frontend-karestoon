@@ -1,0 +1,76 @@
+.project-box {
+    background-color: #fff;
+    width: 100%;
+    margin: 1rem;
+    border-radius: 0.5rem;
+    padding: 1rem;
+    box-shadow: 0 0 20px 0 #4c577d05;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.project-box .project-box-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+.project-box .project-box-table {
+    border: 1px solid #eff2f5;
+    border-radius: 0.65rem;
+    border-collapse: separate;
+    border-spacing: 0;
+    margin-top: 2rem;
+    text-align: center;
+    display: table;
+    width: 100%;
+}
+
+.project-box .project-box-table th,
+.project-box .project-box-table td {
+    padding: 1rem;
+}
+
+.project-box .project-box-table tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+.project-box .project-button-edit {
+    margin: 0 0.5rem;
+    background-color: #ffea00;
+    color: #000;
+    font-size: 10px;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.project-box .project-button-delete {
+    margin: 0 0.5rem;
+    background-color: #e53935;
+    color: #fff;
+    font-size: 10px;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.project-box .project-button-edit svg,
+.project-box .project-button-delete svg {
+    width: 15px;
+    height: 15px;
+}
+
+.css-yiavyu-MuiBackdrop-root-MuiDialog-backdrop {
+    background-color: #0000001a !important;
+}
+
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper {
+    box-shadow: 0px 11px 15px -7px rgb(0 0 0 / 23%), 0px 24px 38px 3px rgb(0 0 0 / 0%), 0px 9px 46px 8px rgb(0 0 0 / 0%) !important;
+}
+
+.css-bdhsul-MuiTypography-root-MuiDialogTitle-root,
+.css-1t1j96h-MuiPaper-root-MuiDialog-paper button {
+    font-family: "dana", "Helvetica", "Arial", sans-serif !important;
+}
+
+.MuiDialogActions-root.MuiDialogActions-spacing.css-hlj6pa-MuiDialogActions-root {
+    justify-content: center;
+}

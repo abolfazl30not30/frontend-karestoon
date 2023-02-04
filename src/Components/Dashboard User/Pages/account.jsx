@@ -18,7 +18,7 @@ const cacheRtl = createCache({
     stylisPlugins: [prefixer, rtlPlugin],
 });
 
-function Account() {
+function UserAccount() {
     const [name, setName] = useState('سروش');
     const [family, setFamily] = useState('هیپاپولوژیست');
     const [phoneNumber, setPhoneNumber] = useState('09129996996');
@@ -85,4 +85,4 @@ function Account() {
         </>
     );
 }
-export default Account
+export default UserAccount

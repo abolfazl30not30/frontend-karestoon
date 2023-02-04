@@ -2,11 +2,8 @@ import React from "react";
 import Navbar from "./header";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
-import Main from "../Pages/main";
-import Payment from "../Pages/Payment";
-import Account from "../Pages/account"
-import CreateCrowdFunding from "../Pages/CreateCrowdFunding";
 import "../../../style/dashboard/dashboard.css"
+import { Outlet } from "react-router-dom";
 
 function DashboardAdmin() {
     return (
@@ -15,15 +12,11 @@ function DashboardAdmin() {
                 <Sidebar />
                 <Navbar />
                 <div className="main">
-                    <CreateCrowdFunding />
+                    <Outlet />
                 </div>
-
                 <Footer />
+
             </div>
-
-
-
-
         </>
 
     );

@@ -1,15 +1,13 @@
 import React from "react";
 import Logo from "../../../assets/img/LOGO1-1.jpeg"
-import {CgProfile} from 'react-icons/cg'
+import {Link} from "react-router-dom"
 import {
-    UilLightbulbAlt,
-    UilUser,
-    UilMoneyBill,
-    UilEnvelopeQuestion,
-    UilFileBlank,
     UilTimes,
-    UilCreditCardSearch,
-    UilSignout
+    UilWindow ,
+    UilSignout,
+    UilFolderPlus,
+    UilFolder,
+    UilEnvelope
 } from '@iconscout/react-unicons'
 
 
@@ -30,30 +28,38 @@ function Sidebar() {
                     <img src={Logo}/>
                 </div>
                 <div className="sidebar-list mt-4">
-                    <div className="d-flex flex-row align-items-center sidebar-list-item">
-                        <UilMoneyBill/>
-                        <div className="sidebar-list-item-title">
-                            کمپین ها
+                    <Link to="/admin" className='w-100'>
+                        <div className="d-flex flex-row align-items-center sidebar-list-item">
+                            <UilWindow />
+                            <div className="sidebar-list-item-title">
+                                داشبورد
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex flex-row align-items-center sidebar-list-item">
-                        <UilMoneyBill/>
-                        <div className="sidebar-list-item-title">
-                            ساخت کمپین
+                    </Link>
+                    <Link to="/admin/crowd-funding" className='w-100'>
+                        <div className="d-flex flex-row align-items-center sidebar-list-item">
+                            <UilFolder />
+                            <div className="sidebar-list-item-title">
+                                پروژه ها
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex flex-row align-items-center sidebar-list-item">
-                        <UilUser/>
-                        <div className="sidebar-list-item-title">
-                            اطلاعات حساب کاربری
+                    </Link>
+                    <Link to="/admin/create-crowd-funding" className='w-100'>
+                        <div className="d-flex flex-row align-items-center sidebar-list-item">
+                            <UilFolderPlus />
+                            <div className="sidebar-list-item-title">
+                                ساخت پروژه
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex flex-row align-items-center sidebar-list-item">
-                        <UilEnvelopeQuestion/>
-                        <div className="sidebar-list-item-title">
-                            تیکت
+                    </Link>
+                    <Link to="/admin/ticket" className='w-100'>
+                        <div className="d-flex flex-row align-items-center sidebar-list-item">
+                            <UilEnvelope/>
+                            <div className="sidebar-list-item-title">
+                                تیکت
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                     <div className="d-flex flex-row align-items-center sidebar-list-item">
                         <UilSignout />
                         <div className="sidebar-list-item-title">

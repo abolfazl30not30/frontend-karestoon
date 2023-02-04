@@ -1,10 +1,11 @@
 import React from "react";
+import { Outlet } from "react-router-dom";
 import Navbar from "./header";
 import Sidebar from "./sidebar";
 import Footer from "./footer";
-import Main from "../Pages/main";
-import Payment from "../Pages/Payment";
-import Account from "../Pages/account"
+import MainUserPage from "../Pages/main";
+import ProjectUser from "../Pages/Payment";
+import UserAccount from "../Pages/account"
 import "../../../style/dashboard/dashboard.css"
 
 function DashboardUser() {
@@ -15,7 +16,7 @@ function DashboardUser() {
                 <Sidebar />
                 <Navbar />
                 <div className="main">
-                    <Payment />
+                    <Outlet />
                 </div>
                 <Footer />
             </div>

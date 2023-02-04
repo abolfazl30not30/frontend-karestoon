@@ -1,9 +1,9 @@
 import React from "react";
 
-function Main() {
+function MainAdminPage() {
     return <>
         <h1>index</h1>
     </>
 }
 
-export default Main
+export default MainAdminPage

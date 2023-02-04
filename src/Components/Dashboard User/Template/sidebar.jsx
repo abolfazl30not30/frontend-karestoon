@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom"
 import Logo from "../../../assets/img/LOGO1-1.jpeg"
 import {CgProfile} from 'react-icons/cg'
 import {
@@ -30,18 +31,24 @@ function Sidebar() {
                     <img src={Logo}/>
                 </div>
                 <div className="sidebar-list mt-4">
-                    <div className="d-flex flex-row align-items-center sidebar-list-item">
-                        <UilMoneyBill/>
-                        <div className="sidebar-list-item-title">
-                            حمایت های من
+                    <Link to="/dashboard/projects" className='w-100'>
+                        <div className="d-flex flex-row align-items-center sidebar-list-item">
+                            <UilMoneyBill/>
+                            <div className="sidebar-list-item-title">
+                                حمایت های من
+                            </div>
                         </div>
-                    </div>
-                    <div className="d-flex flex-row align-items-center sidebar-list-item">
-                        <UilUser/>
-                        <div className="sidebar-list-item-title">
-                            اطلاعات حساب کاربری
+                    </Link>
+                    <Link to="/dashboard/account" className='w-100'>
+                        <div className="d-flex flex-row align-items-center sidebar-list-item">
+                            <UilUser/>
+                            <div className="sidebar-list-item-title">
+                                اطلاعات حساب کاربری
+                            </div>
                         </div>
-                    </div>
+                    </Link>
+
+
                     <div className="d-flex flex-row align-items-center sidebar-list-item">
                         <UilEnvelopeQuestion/>
                         <div className="sidebar-list-item-title">
