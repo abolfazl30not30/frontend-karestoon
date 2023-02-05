@@ -1,0 +1,97 @@
+.chat-box {
+    /*background-color: #fff;*/
+    padding: 1rem;
+    border-radius: 0.5rem;
+    height: fit-content;
+    width: 100%;
+    /*box-shadow: 0 0 20px 0 rgb(76 87 125 / 2%);*/
+}
+
+.chat-box .chat-box-header {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #3f4254 !important;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.chat-box label {
+    font-weight: 600 !important;
+    font-size: 1rem !important;
+}
+
+.chat-box input {
+    border-radius: .5rem !important;
+}
+
+.chat-box .chat-messenger {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+    width: 100%;
+    max-width: 500px;
+}
+
+.chat-box .chat-messenger-header {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #3f4254 !important;
+    margin-bottom: 2rem;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 0.5rem;
+}
+
+.chat-box .chat-messenger-body .admin-message,
+.chat-box .chat-messenger-body .user-message {
+    margin-bottom: 1rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    width: fit-content;
+}
+
+.chat-box .chat-messenger-body .admin-message {
+    background-color: #e4fff4;
+    color: #181c32;
+}
+
+.chat-box .chat-messenger-body .user-message {
+    background-color: #f6f1fc;
+    color: #181c32;
+}
+.chat-box .chat-messenger-body .chat-messenger-item-info {
+    font-size: .8rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: end;
+}
+.chat-box .chat-messenger .chat-messenger-footer {
+    border-top: 1px solid #eee;
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+}
+.chat-box  .chat-messenger-footer input {
+    border: none;
+    background-color: #eee;
+
+}
+.chat-box  .chat-messenger-footer .send-message {
+    margin-top: 1rem;
+    color: #fff;
+    font-size: 1rem;
+    background-color: #20d489;
+    padding: .5rem;
+    border-radius: .5rem;
+    width: 100%;
+}
+.chat-box .chat-messenger-time {
+    background-color: #f5f8fa;
+    color: #5e6278;
+    padding: 0.2rem 0.5rem;
+    font-size: 12px;
+    font-weight: 600;
+    border-radius: 0.5rem;
+}

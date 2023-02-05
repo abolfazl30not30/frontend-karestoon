@@ -12,6 +12,7 @@ import MainUserPage from "./Components/Dashboard User/Pages/main"
 import ProjectUser from "./Components/Dashboard User/Pages/Payment"
 import UserAccount from "./Components/Dashboard User/Pages/account"
 import AdminTicket from "./Components/Dashboard Admin/Pages/adminTicket"
+import AdminChat from "./Components/Dashboard Admin/Pages/AdminChat"
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
                     <Route path="crowd-funding" element={<CrowdFunding />} />
                     <Route path="create-crowd-funding" element={<CreateCrowdFunding />} />
                     <Route path="ticket" element={<AdminTicket />} />
+                    <Route path="ticket/chat" element={<AdminChat />} />
                 </Route>
 
 
