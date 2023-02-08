@@ -125,7 +125,9 @@ body {
 	font-size: 16px;
 	line-height: 1.8;
 }
-
+.font-input{
+	font-family: var(--primary-font) !important;
+}
 * {
 	margin: 0;
 	padding: 0;

@@ -7,7 +7,8 @@
     "@emotion/styled": "^11.10.5",
     "@iconscout/react-unicons": "^1.1.6",
     "@mui/base": "^5.0.0-alpha.116",
-    "@mui/material": "^5.11.7",
+    "@mui/material": "^5.11.8",
+    "@mui/styled-engine-sc": "^5.11.0",
     "@mui/system": "^5.11.7",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -26,6 +27,7 @@
     "react-slick": "^0.29.0",
     "react-visibility-sensor": "^5.1.1",
     "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.6",
     "stylis-plugin-rtl": "^2.1.1",
     "web-vitals": "^2.1.4"
   },
