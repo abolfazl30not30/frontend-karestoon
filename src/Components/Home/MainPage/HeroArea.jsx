@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from "./Header";
 import heroLine2 from '../../../assets/img/hero/hero-line-3.png'
-import heroTwoImg from '../../../assets/img/hero/hero-one-small.jpg'
+import heroTwoImg from '../../../assets/img/slider_1.jpg'
 
 function MainPage() {
 

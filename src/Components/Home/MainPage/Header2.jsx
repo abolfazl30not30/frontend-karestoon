@@ -1,7 +1,8 @@
 import React from 'react';
-import logo from "../../../assets/img/LOGO1-1.jpeg";
+import logo from "../../../assets/img/LOGO1-1.png";
 import logoWhite from "../../../assets/img/logo-white.png";
 import {useEffect, useState} from "react";
+import {NavLink,Link} from "react-router-dom";
 
 function Header2() {
     const [isMobile,setIsMobile] = useState(false);
@@ -25,56 +26,29 @@ function Header2() {
 
     return (
         <>
-            <header className="site-header sticky-header">
-                <div className="header-topbar d-none d-sm-block">
-                    <div className="container">
-                        <div className="row justify-content-between align-items-center">
-                            <div className="col-auto">
-                                <ul className="contact-info">
-                                    <li><a href="#"><i className="far fa-envelope"></i> <span className="__cf_email__" data-cfemail="info@charity-salam.ir">info@charity-salam.ir</span></a></li>
-                                    <li><a href="#"><i className="far fa-map-marker-alt"></i> تهران - مرکز رشد و نوآوری دانشگاه شهید بهشتی</a></li>
-                                </ul>
-                            </div>
-                            <div className="col-auto d-none d-md-block">
-                                <ul className="social-icons">
-                                    <li><a href="#"><i className="fab fa-twitter"></i></a></li>
-                                    <li><a href="#"><i className="fab fa-youtube"></i></a></li>
-                                    <li><a href="#"><i className="fab fa-behance"></i></a></li>
-                                    <li><a href="#"><i className="fab fa-google-plus-g"></i></a></li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <header className="site-header sticky-header mt-2">
                 <div className={isMobile ? "navbar-wrapper breakpoint-on" : "navbar-wrapper"}>
                     <div className="container">
                         <div className="navbar-inner">
                             <div className="site-logo">
-                                <a href=""><img src={logo} alt="Funden"/></a>
+                                <Link to="/"><img src={logo} alt="Funden"/></Link>
                             </div>
                             <div className="nav-menu">
                                 <ul>
-                                    <li className="current">
-                                        <a href="#">خانه</a>
+                                    <li>
+                                        <NavLink end to="/" activeClassName='active'>خـانـه</NavLink>
                                     </li>
                                     <li>
                                         <a href="#">معرفي با خانمان</a>
+                                    </li>
+                                    <li>
+                                        <NavLink  to="/projects" activeClassName='active'>پـروژه ها</NavLink>
                                     </li>
                                     <li>
                                         <a href="">رويداد ها</a>
                                     </li>
                                     <li>
                                         <a href="">همياران</a>
-                                    </li>
-                                    <li>
-                                        <a href="#">طرح ها
-                                            <span className="dd-trigger">
-                                                <i className="far fa-angle-down"></i>
-                                            </span>
-                                        </a>
-                                        <ul className="submenu">
-                                            <li><a href="#">تامين مالي جمعی</a></li>
-                                        </ul>
                                     </li>
                                     <li>
                                         <a href="#">صفحه ها
@@ -91,7 +65,7 @@ function Header2() {
                                             <li><a href="#">نظرات</a></li>
                                         </ul>
                                     </li>
-                                    <li><a href="#">ارتباط با ما</a></li>
+                                    <li><NavLink  to="/contact-us" activeClassName='active'>ارتباط بـا مـا</NavLink></li>
                                 </ul>
                             </div>
                             <div className="navbar-extra d-flex align-items-center">
@@ -107,30 +81,23 @@ function Header2() {
                 </div>
                 <div className={isOpen ? "mobile-menu-panel panel-opened" : "mobile-menu-panel"}>
                     <div className="panel-logo">
-                        <a href="#"><img src={logoWhite} alt="Funden"/></a>
+                        <Link to="/"><img src={logoWhite} alt="Funden"/></Link>
                     </div>
                     <ul className="panel-menu">
-                        <li className="current">
-                            <a href="#">خانه</a>
+                        <li>
+                            <NavLink end to="/" activeClassName='active'>خـانـه</NavLink>
                         </li>
                         <li>
                             <a href="#">معرفي با خانمان</a>
+                        </li>
+                        <li>
+                            <NavLink  to="/projects" activeClassName='active'>پـروژه ها</NavLink>
                         </li>
                         <li>
                             <a href="">رويداد ها</a>
                         </li>
                         <li>
                             <a href="">همياران</a>
-                        </li>
-                        <li>
-                            <a href="#">طرح ها
-                                <span className="dd-trigger">
-                                                <i className="far fa-angle-down"></i>
-                                            </span>
-                            </a>
-                            <ul className="submenu">
-                                <li><a href="#">تامين مالي جمعی</a></li>
-                            </ul>
                         </li>
                         <li>
                             <a href="#">صفحه ها
@@ -147,7 +114,7 @@ function Header2() {
                                 <li><a href="#">نظرات</a></li>
                             </ul>
                         </li>
-                        <li><a href="#">ارتباط با ما</a></li>
+                        <li><NavLink  to="/contact-us" activeClassName='active'>ارتباط بـا مـا</NavLink></li>
                     </ul>
                     <div className="panel-extra">
                         <a href="#" className="main-btn btn-white">
