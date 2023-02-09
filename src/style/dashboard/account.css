@@ -6,6 +6,36 @@
     padding: 1rem;
     box-shadow: 0 0 20px 0 #4c577d05;
 }
+.account-box .title-box {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+.account-box label {
+    font-weight: 600 !important;
+    font-size: 16px !important;
+}
+.account-box input {
+    border-radius: .5rem;
+}
+.account-box #upload_profile_image {
+    background-color: #ffc107 !important;
+    color: #fff !important;
+    font-family: 'dana';
+    border-radius: 0.5rem;
+    width: fit-content;
+    padding: 0.5rem;
+    font-weight: 500 !important;
+}
+.account-box .profile-image-box {
+    margin-bottom: .5rem;
+}
+.account-box .edit-account-button {
+    color: #fff;
+    font-size: 1rem;
+    background-color: #20d489;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
 .button-edit {
     background-color: #ffc107 !important;
     color: #fff !important;
