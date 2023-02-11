@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import "./../../../style/dashboard/chat.css";
-import Avatar from '@mui/material/Avatar';
-import Stack from '@mui/material/Stack';
 import AdminAvatar from "./../../../assets/img/dashboard/admin.jpg"
 import UserAvatar from "./../../../assets/img/dashboard/user.jpg"
+import Avatar from '@mui/material/Avatar';
+import Stack from '@mui/material/Stack';
+import {deepOrange, deepPurple} from '@mui/material/colors';
 
 
 function UserChat() {
@@ -13,6 +14,7 @@ function UserChat() {
             chat: [
                 {
                     sender: 'user',
+                    name: 'میلاد',
                     time: '1401/09/07',
                     message: 'سلام'
                 },
@@ -28,11 +30,11 @@ function UserChat() {
 
 
     const handleSendMessage = () => {
-       /* const newMessage = {
-            sender: 'user',
-            message: typedMessage
-        }
-        console.log(ticket)*/
+        /* const newMessage = {
+             sender: 'user',
+             message: typedMessage
+         }
+         console.log(ticket)*/
     }
 
     return (
@@ -67,11 +69,8 @@ function UserChat() {
                                                         <div className="d-flex flex-column">
                                                             <div className='chat-messenger-item-info'>
                                                                 <Stack direction="row" spacing={2}>
-                                                                    <Avatar
-                                                                        alt="ََAdmin"
-                                                                        src={AdminAvatar}
-                                                                        className='ms-2'
-                                                                    />
+                                                                    <Avatar sx={{bgcolor: deepOrange[500]}}
+                                                                            className='ms-2'>پ</Avatar>
                                                                 </Stack>
                                                                 <span>برادر پشتیبان</span>
                                                             </div>
@@ -91,14 +90,11 @@ function UserChat() {
                                                     <div className="d-flex justify-content-start">
                                                         <div className="d-flex flex-column">
                                                         <span className='chat-messenger-item-info'>
-                                                            <Stack direction="row" spacing={2}>
-                                                                <Avatar
-                                                                    alt="ََAdmin"
-                                                                    src={UserAvatar}
-                                                                    className='ms-2'
-                                                                />
-                                                            </Stack>
-                                                            <span>سروش</span>
+                                                             <Stack direction="row" spacing={2}>
+                                                                    <Avatar sx={{bgcolor: deepPurple[500]}}
+                                                                            className='ms-2'>{mes.name.slice(0,1)}</Avatar>
+                                                                </Stack>
+                                                            <span>{mes.name}</span>
                                                         </span>
                                                             <div className='chat-messenger-item user-message'>
                                                                 {mes.message}

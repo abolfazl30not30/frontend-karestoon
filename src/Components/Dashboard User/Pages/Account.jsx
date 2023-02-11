@@ -76,7 +76,7 @@ function UserAccount() {
                             />
                         </div>
                         {/*Image file Input*/}
-                        <div className="col-md-6 col-12 my-2 px-2">
+                        {/*<div className="col-md-6 col-12 my-2 px-2">
                             <div className="d-flex flex-column">
                                 <div className="profile-image-box">
                                     <img src={profileImage}/>
@@ -90,7 +90,7 @@ function UserAccount() {
                                     تغیر تصویر پروفایل
                                 </label>
                             </div>
-                        </div>
+                        </div>*/}
                         {/*Edit Account*/}
                         <div className="col-12 my-2 px-2">
                            <button className='edit-account-button' onClick={handleEditAccount}>ویرایش حساب کاربری</button>

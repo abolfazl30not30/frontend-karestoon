@@ -45,9 +45,6 @@ function UserTicket() {
 
     return (
         <>
-            {/*<Link to='chat'>
-                <button>ثبت تیکت جدید</button>
-            </Link>*/}
             <div className="ticket-box">
                 <div className="ticket-box-header">
                     <div className="ticket-box-title">سوابق تیکت ها</div>

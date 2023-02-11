@@ -18,6 +18,7 @@ import UserChat from "./Components/Dashboard User/Pages/UserChat"
 import OTP from "./Components/Signup/OTP"
 import EnterPassword from "./Components/Signup/EnterPassword"
 import ResetPassword from "./Components/Signup/ResetPassword"
+import EditCrowdFunding from "./Components/Dashboard Admin/Pages/EditCrowdFunding"
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                     <Route path="" element={<MainAdminPage />} />
                     <Route path="crowd-funding" element={<CrowdFunding />} />
                     <Route path="create-crowd-funding" element={<CreateCrowdFunding />} />
+                    <Route path="edit-crowd-funding" element={<EditCrowdFunding />} />
                     <Route path="ticket" element={<AdminTicket />} />
                     <Route path="ticket/chat" element={<AdminChat />} />
                 </Route>

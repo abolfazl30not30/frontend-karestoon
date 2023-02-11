@@ -52,7 +52,7 @@ function Sidebar() {
                     </Link>
 
 
-                    <Link to="/admin/ticket" className='w-100'>
+                    <Link to="/dashboard/ticket" className='w-100'>
                         <div className="d-flex flex-row align-items-center sidebar-list-item">
                             <UilEnvelope/>
                             <div className="sidebar-list-item-title">
