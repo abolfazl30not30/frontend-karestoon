@@ -1,5 +1,5 @@
 import React from 'react';
-
+import {Link} from "react-router-dom"
 function Title(props) {
 
     return (
@@ -12,7 +12,7 @@ function Title(props) {
                         </div>
                         <div className="col-auto">
                             <ul className="page-breadcrumb">
-                                <li><a href="#">خانه</a></li>
+                                <li><Link to="/">خانه</Link></li>
                                 <li>{props.name}</li>
                             </ul>
                         </div>
@@ -21,6 +21,7 @@ function Title(props) {
             </section>
         </>
     );
+
 }
 
 export default Title

@@ -75,9 +75,6 @@ function Project() {
                                     <div className="thumb"
                                          style={{backgroundImage: `url(${projectImg1})`}}></div>
                                     <div className="content">
-                                        <div className="cats">
-                                            <a href="#">تامين مالي جمعي</a>
-                                        </div>
                                         <h5 className="title">
                                             <a href="">بازگشت به زندگی</a>
                                         </h5>
@@ -122,9 +119,6 @@ function Project() {
                                     <div className="thumb"
                                          style={{backgroundImage: `url(${projectImg1})`}}></div>
                                     <div className="content">
-                                        <div className="cats">
-                                            <a href="#">تامين مالي جمعي</a>
-                                        </div>
                                         <h5 className="title">
                                             <a href="">بازگشت به زندگی</a>
                                         </h5>
@@ -169,9 +163,6 @@ function Project() {
                                     <div className="thumb"
                                          style={{backgroundImage: `url(${projectImg1})`}}></div>
                                     <div className="content">
-                                        <div className="cats">
-                                            <a href="#">تامين مالي جمعي</a>
-                                        </div>
                                         <h5 className="title">
                                             <a href="">بازگشت به زندگی</a>
                                         </h5>
@@ -206,7 +197,6 @@ function Project() {
                                             </div>
                                             <span className="date"><i className="far fa-calendar-alt"></i> 1401/09/18</span>
                                         </div>
-
                                     </div>
                                 </div>
                             </div>
@@ -215,9 +205,6 @@ function Project() {
                                     <div className="thumb"
                                          style={{backgroundImage: `url(${projectImg1})`}}></div>
                                     <div className="content">
-                                        <div className="cats">
-                                            <a href="#">تامين مالي جمعي</a>
-                                        </div>
                                         <h5 className="title">
                                             <a href="">بازگشت به زندگی</a>
                                         </h5>

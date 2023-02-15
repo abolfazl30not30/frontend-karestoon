@@ -1662,7 +1662,7 @@ a:hover {
 .page-title-area {
 	position: relative;
 	z-index: 1;
-	padding: 125px 0;
+	padding: 6.5rem 0;
 	background-image: url(../img/page-title.jpg);
 	background-size: cover;
 	background-position: center;
@@ -2532,6 +2532,7 @@ a:hover {
 	font-size: 30px;
 	margin-bottom: 30px;
 	line-height: 1.4;
+	font-weight: 600;
 }
 
 .project-summery .meta {
@@ -2587,20 +2588,23 @@ a:hover {
 
 .project-summery .project-funding-info .info-box span {
 	display: block;
+	font-size: 1.1rem;
 }
-
+.project-summery .project-funding-info .info-box:first-child span:first-child {
+	font-size: 0.9rem;
+}
 .project-summery .project-funding-info .info-box .info-title {
-	font-size: 16px;
+	font-size: 0.9rem;
 	color: var(--body-color);
-	font-weight: 400;
+	font-weight: 600;
 	margin-top: 12px;
 }
 
 .project-summery .project-raised .raised-label,
 .project-summery .project-raised .percent-raised {
-	font-size: 18px;
+	font-size: 0.9rem;
 	color: var(--secondary-color);
-	font-weight: 700;
+	font-weight: 500;
 	line-height: 1;
 }
 
@@ -5313,10 +5317,12 @@ a:hover {
 
 .contact-info-boxes .info-content h5 {
 	font-size: 22px;
+	font-weight: 600;
 	margin-bottom: 15px;
 }
 .contact-info-boxes .info-content p {
 	text-align: center;
+	font-size: 0.8rem;
 }
 
 .contact-from-area {

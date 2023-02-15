@@ -33,8 +33,8 @@ function Details() {
                                                 <i className="flaticon-place"></i>
                                             </div>
                                             <div className="info-content">
-                                                <h5>آدرس ما</h5>
-                                                <p>
+                                                <h5 style={{fontWeight:"600"}}>آدرس ما</h5>
+                                                <p style={{fontSize:"0.8rem"}}>
                                                     تهران – ولنجک میدان شهید شهریاری – دانشگاه شهید بهشتی – مرکز رشد و نوآوری
                                                 </p>
                                             </div>
@@ -45,7 +45,7 @@ function Details() {
                                                 <i className="flaticon-envelope"></i>
                                             </div>
                                             <div className="info-content">
-                                                <h5>ایمیل</h5>
+                                                <h5 >ایمیل</h5>
                                                 <p>
                                                     <a href="#">info@charity-salam.ir</a> <br/>
                                                 </p>

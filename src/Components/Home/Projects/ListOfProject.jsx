@@ -4,14 +4,14 @@ import img2 from "../../../assets/img/project/project-list-03.jpg"
 import {BsCash, BsHeart, BsHeartFill} from "react-icons/bs";
 import {GiCash} from "react-icons/gi";
 import ProgressBar from "react-bootstrap/ProgressBar";
-import Paper from '@mui/material/Paper';
-import InputBase from '@mui/material/InputBase';
-import Divider from '@mui/material/Divider';
-import IconButton from '@mui/material/IconButton';
-import {AiOutlineSearch} from "react-icons/ai";
 import TextField from '@mui/material/TextField';
+import { InputAdornment } from '@mui/material';
 import MenuItem from '@mui/material/MenuItem';
-
+import rtlPlugin from 'stylis-plugin-rtl';
+import {CacheProvider} from '@emotion/react';
+import createCache from '@emotion/cache';
+import {prefixer} from 'stylis';
+import {AiOutlineSearch} from 'react-icons/ai'
 const currencies = [
     {
         value: 'new',
@@ -23,7 +23,7 @@ const currencies = [
     },
     {
         value: 'old',
-        label: 'قديمي ترين',
+        label: 'قديمی ترين',
     },
 ];
 
@@ -39,42 +39,51 @@ function ListOfProject() {
         }
     }
 
+    const cacheRtl = createCache({
+        key: 'muirtl',
+        stylisPlugins: [prefixer, rtlPlugin],
+    });
+
     return (
         <>
             <div className="container mt-5">
-                <div className="row mb-5 mx-2">
-                    <div className="col-2">
-                        <TextField
-                            labelId="demo-simple-select-label"
-                            id="demo-simple-select"
-                            select
-                            label="مرتب سازي براساس"
-                            defaultValue="new"
-                            inputProps={{style: {fontFamily: "dana"}}} // font size of input text
-                            InputLabelProps={{style: {fontFamily: "dana"}}} // font size of input label
-                            className="w-100 "
-                        >
-                            {currencies.map((option) => (
-                                <MenuItem key={option.value} value={option.value}>
-                                    {option.label}
-                                </MenuItem>
-                            ))}
-                        </TextField>
-                    </div>
-                    <div className="col-6">
-                        <Paper
-                            component="form"
-                            sx={{ p: '5px 5px', display: 'flex', alignItems: 'center',fontFamily:"dana" }}>
-                            <InputBase
-                                sx={{ ml: 1, flex: 1,fontFamily:"dana" }}
-                                placeholder="جـستوجـو..."
-                                inputProps={{ 'aria-label': 'جـستوجـو...' }}
+                <div className="row mb-5" style={{border:"2px solid #e5e7eb",borderRadius:"1rem",padding:"1.5rem"}}>
+                    <CacheProvider value={cacheRtl}>
+                        <div className="col-2">
+                            <TextField
+                                labelId="demo-simple-select-label"
+                                id="demo-simple-select"
+                                select
+                                label="مرتب سازي براساس"
+                                defaultValue="new"
+                                InputProps={{style: {fontFamily: "dana"}}}
+                                InputLabelProps={{
+                                    style: {
+                                        fontFamily: "dana",
+                                        fontSize: "0.9rem"
+                                    }
+                                }} // font size of input label
+                                className="w-100 "
+                            >
+                                {currencies.map((option) => (
+                                    <MenuItem key={option.value} value={option.value}>
+                                        {option.label}
+                                    </MenuItem>
+                                ))}
+                            </TextField>
+
+                        </div>
+                        <div className="col-6">
+                            <TextField id="outlined-basic" className="w-100 " label="جـستوجـو..." variant="outlined"
+                                       InputLabelProps={{style: {fontFamily: "dana", fontSize: "0.9rem"}}}
+                                       InputProps={{style:{fontFamily:"dana"},endAdornment: (
+                                               <InputAdornment position="start">
+                                                   <AiOutlineSearch fontSize="1.3rem"/>
+                                               </InputAdornment>
+                                           )}}
                             />
-                            <IconButton type="button" sx={{ p: '10px' }} aria-label="search">
-                                <AiOutlineSearch />
-                            </IconButton>
-                        </Paper>
-                    </div>
+                        </div>
+                    </CacheProvider>
                 </div>
                 <div className="row project-items project-style-three justify-content-center">
                     <div className="col-lg-4 col-sm-10">
