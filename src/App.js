@@ -3,16 +3,23 @@ import MainPage from "./Components/Home/MainPage/MainPage";
 import {BrowserRouter, Route,Routes} from "react-router-dom";
 import DashboardUser from "./Components/Dashboard User/Template/master"
 import DashboardAdmin from "./Components/Dashboard Admin/Template/master"
-import Login from "./Components/Signup/Login";
-import Signup from "./Components/Signup/Signup";
+import SignIn from "./Components/Signup/SignIn";
+import SignUp from "./Components/Signup/SignUp";
 import CrowdFunding from "./Components/Dashboard Admin/Pages/Crowdfunding";
 import CreateCrowdFunding from "./Components/Dashboard Admin/Pages/CreateCrowdFunding"
 import MainAdminPage from "./Components/Dashboard Admin/Pages/main"
-import MainUserPage from "./Components/Dashboard User/Pages/main"
-import ProjectUser from "./Components/Dashboard User/Pages/Payment"
-import UserAccount from "./Components/Dashboard User/Pages/account"
-import AdminTicket from "./Components/Dashboard Admin/Pages/adminTicket"
+import MainUserPage from "./Components/Dashboard User/Pages/Main"
+import ProjectUser from "./Components/Dashboard User/Pages/Project"
+import UserAccount from "./Components/Dashboard User/Pages/Account"
+import AdminTicket from "./Components/Dashboard Admin/Pages/AdminTicket"
 import AdminChat from "./Components/Dashboard Admin/Pages/AdminChat"
+import UserTicket from "./Components/Dashboard User/Pages/UserTicket"
+import UserChat from "./Components/Dashboard User/Pages/UserChat"
+import OTP from "./Components/Signup/OTP"
+import EnterPassword from "./Components/Signup/EnterPassword"
+import ResetPassword from "./Components/Signup/ResetPassword"
+import EditCrowdFunding from "./Components/Dashboard Admin/Pages/EditCrowdFunding"
+
 
 function App() {
   return (
@@ -24,19 +31,22 @@ function App() {
                     <Route path="" element={<MainAdminPage />} />
                     <Route path="crowd-funding" element={<CrowdFunding />} />
                     <Route path="create-crowd-funding" element={<CreateCrowdFunding />} />
+                    <Route path="edit-crowd-funding" element={<EditCrowdFunding />} />
                     <Route path="ticket" element={<AdminTicket />} />
                     <Route path="ticket/chat" element={<AdminChat />} />
                 </Route>
-
-
                 <Route path="/dashboard" element={(<DashboardUser/>)}>
                     <Route path="" element={<MainUserPage />} />
                     <Route path="account" element={<UserAccount />} />
                     <Route path="projects" element={<ProjectUser />} />
+                    <Route path="ticket" element={<UserTicket />} />
+                    <Route path="ticket/chat" element={<UserChat />} />
                 </Route>
-
-
-                <Route exact path="/login" element={(<Signup/>)}/>
+                <Route exact path="/sign-in" element={(<SignIn/>)}/>
+                <Route exact path="/sign-up" element={(<SignUp/>)}/>
+                <Route exact path="/OTP" element={(<OTP/>)}/>
+                <Route exact path="/enter-password" element={(<EnterPassword/>)}/>
+                <Route exact path="/reset-password" element={(<ResetPassword/>)}/>
                 {/*<Route exact path="/dashboard/*" element={(<DashboardUser/>)}/>*/}
             </Routes>
         </BrowserRouter>

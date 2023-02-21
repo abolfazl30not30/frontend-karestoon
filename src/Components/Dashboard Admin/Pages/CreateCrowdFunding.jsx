@@ -54,6 +54,7 @@ export default function CreateCrowdFunding() {
     const editorRef = useRef(null);
     const log = () => {
         if (editorRef.current) {
+            console.log(editorRef.current.getContent())
             setProjectContent(editorRef.current.getContent())
         }
     };
@@ -78,7 +79,7 @@ export default function CreateCrowdFunding() {
     }
 
     const handleReleaseProject = () => {
-        console.log('relese')
+        console.log(projectContent)
     }
 
 

@@ -1,0 +1,107 @@
+body {
+    background-color: #f9f9f9 !important;
+}
+* {
+    font-family: "dana",sans-serif !important;
+}
+.signup-box {
+    background-color: #fff;
+    border-radius: 1.5rem;
+    margin: 2rem;
+    width: 100%;
+    max-width: 70%;
+    height: 100%;
+}
+
+.signup-box-content {
+    padding: 1rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.signup-box-content .signup-box-title {
+    font-size: 48px;
+    text-align: center;
+    margin: 2rem 0;
+}
+.signup-box-content input {
+    border-radius: .5rem;
+}
+.signup-box-content .muirtl-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    font-family: "dana", sans-serif !important;
+}
+.signup-box-content .login-btn {
+    color: #fff;
+    font-size: 1rem;
+    background-color: #20d489;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.signup-box-content .sent-otp-btn {
+    color: #fff;
+    font-size: .8rem;
+    background-color: #20d489;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+}
+.signup-box-image {
+    height: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    border-radius: 1.5rem 0 0 1.5rem;
+    min-height: 600px;
+}
+.signup-box .error-message {
+    color: red;
+    font-size: 12px;
+    margin: .5rem;
+}
+
+
+
+.MuiInputBase-root.MuiOutlinedInput-root.MuiInputBase-colorPrimary.MuiInputBase-formControl.muirtl-9ddj71-MuiInputBase-root-MuiOutlinedInput-root {
+    border-radius: 0.5rem;
+}
+.muirtl-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input {
+    padding: 12px 8px !important;
+}
+.muirtl-14s5rfu-MuiFormLabel-root-MuiInputLabel-root {
+    top: -2px;
+    font-size: .9rem !important;
+}
+/*OTP Package*/
+.otp-field {
+    display: flex;
+    flex-direction: row-reverse;
+    margin: 1rem 0;
+}
+.otp-field div{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+input.otp-field__input {
+    padding: 0 10px;
+    text-align: center;
+}
+
+
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}
+
+@media (max-width: 768px) {
+    .signup-box-image {
+        display: none;
+    }
+}

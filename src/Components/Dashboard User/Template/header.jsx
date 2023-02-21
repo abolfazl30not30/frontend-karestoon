@@ -1,7 +1,8 @@
-import React,{ useState } from "react";
-import { BsList } from 'react-icons/bs';
+import React, {useState} from "react";
+import {BsList} from 'react-icons/bs';
 import Dropdown from 'react-bootstrap/Dropdown';
-import { UilUser,UilLightbulbAlt,UilMoneyBill } from '@iconscout/react-unicons'
+import {UilUser, UilLightbulbAlt, UilMoneyBill} from '@iconscout/react-unicons'
+import {Link} from "react-router-dom"
 
 
 function Navbar() {
@@ -14,7 +15,7 @@ function Navbar() {
 
             <div className='d-flex flex-row align-items-center'>
                 <button className='btn ms-3' onClick={toggleSidebar}>
-                    <BsList />
+                    <BsList/>
                 </button>
                 {/*<div className="d-flex flex-row navbar-items">
                     <div className="navbar-item">
@@ -36,15 +37,30 @@ function Navbar() {
                 </div>*/}
             </div>
             <Dropdown>
-                <Dropdown.Toggle  id="dropdown-basic" >
-                    <UilUser />
+                <Dropdown.Toggle id="dropdown-basic">
+                    <UilUser/>
                 </Dropdown.Toggle>
-
                 <Dropdown.Menu>
-                    <Dropdown.Item href="#/action-1">حساب کاربری</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">صفحه اصلی</Dropdown.Item>
-                    <Dropdown.Item href="#/action-1">پنل کاربری</Dropdown.Item>
-                    <Dropdown.Item href="#/action-3">خروج از حساب</Dropdown.Item>
+                    <Dropdown.Item>
+                        <Link to='/dashboard/account'>
+                            حساب کاربری
+                        </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <Link to='/'>
+                            صفحه اصلی
+                        </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <Link to='/dashboard'>
+                            پنل کاربری
+                        </Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item>
+                        <Link to='/'>
+                            خروج از حساب
+                        </Link>
+                    </Dropdown.Item>
                 </Dropdown.Menu>
             </Dropdown>
         </div>

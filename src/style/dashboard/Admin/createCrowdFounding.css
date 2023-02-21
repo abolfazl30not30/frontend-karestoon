@@ -1,6 +1,7 @@
 .new-project label {
     font-weight: 600 !important;
 }
+
 .new-project input {
     border-radius: .5rem !important;
 }
@@ -8,15 +9,18 @@
 .new-project .tox[dir=rtl] {
     width: 100%;
 }
+
 .new-project .tox.tox-tinymce {
     margin: 0 .5rem 1rem .5rem;
 }
+
 .new-project .form-select {
     background-image: url(https://api.iconify.design/ion:arrow-down-b.svg);
     background-position: left 0.75rem center;
     background-size: 16px 12px;
     background-repeat: no-repeat;
 }
+
 .button-edit {
     background-color: #28a745 !important;
     color: #fff !important;
@@ -24,4 +28,75 @@
     margin: 0 0.5rem 2rem 0 !important;
     width: 100px;
     font-weight: 500 !important;
+}
+
+.edit-project-title {
+    text-align: center;
+    width: 100%;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+.new-project .report-box {
+    background-color: #fff;
+    padding: 1rem;
+    border-radius: .5rem;
+}
+
+.report-box .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiAccordion-root.MuiAccordion-rounded.Mui-expanded.MuiAccordion-gutters.muirtl-1elwnq4-MuiPaper-root-MuiAccordion-root {
+    box-shadow: none;
+    border-radius: 0.5rem;
+    background-color: #eee;
+}
+.report-box .MuiPaper-root.MuiPaper-elevation.MuiPaper-rounded.MuiPaper-elevation1.MuiAccordion-root.MuiAccordion-rounded.MuiAccordion-gutters.muirtl-1elwnq4-MuiPaper-root-MuiAccordion-root {
+    box-shadow: none !important;
+    border: none;
+    background-color: #eee;
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+.report-box .muirtl-1elwnq4-MuiPaper-root-MuiAccordion-root:before {
+    height: 0 !important;
+}
+.report-box .report-box-image {
+    height: 200px;
+    border-radius: 0.5rem;
+    margin-top: 1rem;
+}
+.tox-notification.tox-notification--in.tox-notification--warning {
+    display: none;
+}
+
+.MuiDialog-container p {
+    font-family: 'dana';
+}
+.MuiDialog-container input {
+    border-radius: .5rem;
+}
+.MuiDialog-container h2#\:r1\: {
+    text-align: center;
+    font-weight: 600;
+}
+.MuiDialog-container label {
+    font-size: .8rem !important;
+    font-weight: 600;
+}
+.MuiDialogActions-root.MuiDialogActions-spacing.muirtl-hlj6pa-MuiDialogActions-root {
+    justify-content: center;
+}
+
+.MuiDialog-container .done-button {
+    color: #fff;
+    font-size: .8rem;
+    background-color: #20d489;
+    padding: .3rem;
+    border-radius: .5rem;
+}
+.MuiDialog-container .close-button {
+    color: #444;
+    font-size: .8rem;
+    background-color: #eee;
+    padding: .3rem;
+    border-radius: .5rem;
 }

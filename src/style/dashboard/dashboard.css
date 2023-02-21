@@ -49,6 +49,9 @@ body {
 .navbar-dashboard .dropdown-item {
     text-align: right;
 }
+.navbar-dashboard .dropdown-item a {
+    width: 100%;
+}
 .navbar-dashboard .dropdown button{
     background-color: transparent;
     color: #000;
