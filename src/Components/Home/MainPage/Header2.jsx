@@ -1,8 +1,10 @@
-import React, {useEffect, useState} from 'react';
-import logo from "../../../assets/img/LOGO1-1.png"
-import logoWhite from "../../../assets/img/logo-white.png"
+import React from 'react';
+import logo from "../../../assets/img/LOGO1-1.png";
+import logoWhite from "../../../assets/img/logo-white.png";
+import {useEffect, useState} from "react";
 import {NavLink,Link} from "react-router-dom";
-function Header() {
+
+function Header2() {
     const [isMobile,setIsMobile] = useState(false);
     const[isOpen,setIsOpne] = useState(false);
 
@@ -24,7 +26,7 @@ function Header() {
 
     return (
         <>
-            <header className="site-header sticky-header transparent-header topbar-transparent mt-2">
+            <header className="site-header sticky-header mt-2">
                 <div className={isMobile ? "navbar-wrapper breakpoint-on" : "navbar-wrapper"}>
                     <div className="container">
                         <div className="navbar-inner">
@@ -128,4 +130,4 @@ function Header() {
     );
 }
 
-export default Header
+export default Header2

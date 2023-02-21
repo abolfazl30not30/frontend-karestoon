@@ -75,7 +75,7 @@
 
     /*======= Project.jsx =======*/
 	.project-items.project-style-one.project-slider-one .content {
-		padding: 55px 30px 35px;
+		padding: 55px 30px 13px 35px;
 	}
 
 	.project-items.project-style-one.project-slider-one .title {
@@ -1089,8 +1089,15 @@
 		min-height: 280px;
 	}
 
+	.project-items.project-style-four .project-item .thumb-nes {
+		width: 100%;
+		min-height: 280px;
+		border-radius: 1rem 1rem 0 0;
+	}
+
 	.project-items.project-style-four .project-item .content {
 		padding: 30px;
+		border-radius: 0 0 1rem 1rem;
 	}
     /*======= Call To Action =======*/
 	.cta-box .cta-title {
