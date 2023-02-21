@@ -110,7 +110,6 @@ function Details() {
                                     </div>
                                 </TabPanel>
                                 <TabPanel value="2">
-
                                 </TabPanel>
                             </TabContext>
                         </div>
