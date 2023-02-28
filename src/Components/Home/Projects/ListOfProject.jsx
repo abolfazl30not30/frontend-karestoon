@@ -12,6 +12,9 @@ import {CacheProvider} from '@emotion/react';
 import createCache from '@emotion/cache';
 import {prefixer} from 'stylis';
 import {AiOutlineSearch} from 'react-icons/ai'
+
+
+
 const currencies = [
     {
         value: 'new',
@@ -92,7 +95,7 @@ function ListOfProject() {
                                  style={{backgroundImage: `url(${img2})`, borderRadius: "1rem"}}></div>
                             <div className="content">
                                 <div className="cats">
-                                    <a href="#" style={{backgroundColor: "#02a95c"}}>ویدیو و فیلم</a>
+                                    <a href="#" style={{backgroundColor: "#02a95c"}}>تامین مالی جمعی</a>
                                 </div>
                                 <div className="content-top">
                                             <span className="date"><i
@@ -115,7 +118,10 @@ function ListOfProject() {
                                     </div>
 
                                     <div className="bar mt-4" data-value="">
-                                        <ProgressBar variant="success" now={60} label={`${60}%`}/>
+                                        <div className="d-flex justify-content-end">
+                                            <span style={{fontSize: "0.7rem",color:"#fff"}}>60%</span>
+                                        </div>
+                                        <ProgressBar style={{height: "0.3rem"}} variant="success" now={60}/>
                                     </div>
                                 </div>
                                 <div className="mt-5 d-flex justify-content-between">
@@ -140,7 +146,7 @@ function ListOfProject() {
                                  style={{backgroundImage: `url(${img1})`, borderRadius: "1rem"}}></div>
                             <div className="content">
                                 <div className="cats">
-                                    <a href="#" style={{backgroundColor: "#02a95c"}}>ویدیو و فیلم</a>
+                                    <a href="#" style={{backgroundColor: "#02a95c"}}>تامین مالی جمعی</a>
                                 </div>
                                 <div className="content-top">
                                             <span className="date"><i
@@ -163,7 +169,10 @@ function ListOfProject() {
                                     </div>
 
                                     <div className="bar mt-4" data-value="">
-                                        <ProgressBar variant="success" now={60} label={`${60}%`}/>
+                                        <div className="d-flex justify-content-end">
+                                            <span style={{fontSize: "0.7rem",color:"#fff"}}>60%</span>
+                                        </div>
+                                        <ProgressBar style={{height: "0.3rem"}} variant="success" now={60}/>
                                     </div>
                                 </div>
                                 <div className="mt-5 d-flex justify-content-between">
@@ -187,7 +196,7 @@ function ListOfProject() {
                                  style={{backgroundImage: `url(${img1})`, borderRadius: "1rem"}}></div>
                             <div className="content">
                                 <div className="cats">
-                                    <a href="#" style={{backgroundColor: "#02a95c"}}>ویدیو و فیلم</a>
+                                    <a href="#" style={{backgroundColor: "#02a95c"}}>تامین مالی جمعی</a>
                                 </div>
                                 <div className="content-top">
                                             <span className="date"><i
@@ -210,7 +219,10 @@ function ListOfProject() {
                                     </div>
 
                                     <div className="bar mt-4" data-value="">
-                                        <ProgressBar variant="success" now={60} label={`${60}%`}/>
+                                        <div className="d-flex justify-content-end">
+                                            <span style={{fontSize: "0.7rem",color:"#fff"}}>60%</span>
+                                        </div>
+                                        <ProgressBar style={{height: "0.3rem"}} variant="success" now={60}/>
                                     </div>
                                 </div>
                                 <div className="mt-5 d-flex justify-content-between">

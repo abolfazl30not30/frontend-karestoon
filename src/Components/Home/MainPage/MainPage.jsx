@@ -14,7 +14,6 @@ function MainPage() {
         <>
             <Header/>
             <HeroArea/>
-            <About/>
             <Project/>
             <Campaigns/>
             <Counter/>

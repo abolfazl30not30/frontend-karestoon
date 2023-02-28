@@ -75,11 +75,11 @@
 
     /*======= Project.jsx =======*/
 	.project-items.project-style-one.project-slider-one .content {
-		padding: 55px 30px 13px 35px;
+		padding: 30px 30px 13px 35px;
 	}
 
 	.project-items.project-style-one.project-slider-one .title {
-		font-size: 16px;
+		font-size: 1.1rem;
 	}
 
 	.project-slider-two .slick-arrow {

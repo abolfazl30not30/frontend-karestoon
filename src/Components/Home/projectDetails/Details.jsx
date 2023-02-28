@@ -4,8 +4,10 @@ import ProgressBar from "react-bootstrap/ProgressBar";
 import Box from '@mui/material/Box';
 import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
+import Tabs from '@mui/material/Tabs';
 import TabPanel from '@mui/lab/TabPanel';
+import Comment from "./Comment";
+import Report from "./Report";
 
 function Details() {
     const [value, setValue] = React.useState('1');
@@ -13,6 +15,12 @@ function Details() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const styles = theme => ({
+        indicator: {
+            backgroundColor: 'white',
+        },
+    })
 
     return (
         <>
@@ -78,10 +86,11 @@ function Details() {
 
                             <TabContext value={value}>
                                 <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
-                                    <TabList onChange={handleChange} aria-label="lab API tabs example" >
+                                    <Tabs  TabIndicatorProps={{style: {background:'#02a95c'}}} value={value} onChange={handleChange}>
                                         <Tab label="توضیحات" value="1"/>
                                         <Tab label="نظرات" value="2"/>
-                                    </TabList>
+                                        <Tab label="گزارشات" value="3"/>
+                                    </Tabs>
                                 </Box>
                                 <TabPanel value="1">
                                     <div className="project-details-tab">
@@ -110,6 +119,10 @@ function Details() {
                                     </div>
                                 </TabPanel>
                                 <TabPanel value="2">
+                                    <Comment/>
+                                </TabPanel>
+                                <TabPanel value="3">
+                                    <Report/>
                                 </TabPanel>
                             </TabContext>
                         </div>

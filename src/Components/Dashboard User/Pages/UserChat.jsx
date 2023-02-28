@@ -10,7 +10,7 @@ import {deepOrange, deepPurple} from '@mui/material/colors';
 function UserChat() {
     const [ticket, updateTicket] = useState(
         {
-            title: 'پول بده',
+            title: 'درخواست کمک',
             chat: [
                 {
                     sender: 'user',
@@ -72,7 +72,7 @@ function UserChat() {
                                                                     <Avatar sx={{bgcolor: deepOrange[500]}}
                                                                             className='ms-2'>پ</Avatar>
                                                                 </Stack>
-                                                                <span>برادر پشتیبان</span>
+                                                                <span> پشتیبان</span>
                                                             </div>
                                                             <div className='chat-messenger-item admin-message'>
                                                                 {mes.message}

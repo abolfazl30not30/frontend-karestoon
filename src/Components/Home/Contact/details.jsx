@@ -47,7 +47,7 @@ function Details() {
                                             <div className="info-content">
                                                 <h5 >ایمیل</h5>
                                                 <p>
-                                                    <a href="#">info@charity-salam.ir</a> <br/>
+                                                    <a style={{color:"#000"}} href="#">info@charity-salam.ir</a> <br/>
                                                 </p>
                                             </div>
                                         </div>

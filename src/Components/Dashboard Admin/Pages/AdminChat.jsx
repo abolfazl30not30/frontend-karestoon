@@ -9,7 +9,7 @@ import UserAvatar from "./../../../assets/img/dashboard/user.jpg"
 function AdminChat() {
     const [ticket, updateTicket] = useState(
         {
-            title: 'پول بده',
+            title: 'عنوان',
             chat: [
                 {
                     sender: 'user',

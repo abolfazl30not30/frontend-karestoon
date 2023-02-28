@@ -13,22 +13,22 @@ import "./../../../style/dashboard/ticket.css"
 function UserTicket() {
     const [tickets,setTickets] = useState([
         {
-            title : 'پول میخوام',
+            title : 'درخواست کمک',
             status: 'در انتظار برسی',
             date : '1401/05/09'
         },
         {
-            title : 'پول میخوام',
+            title : 'درخواست کمک',
             status: 'در انتظار برسی',
             date : '1401/05/09'
         },
         {
-            title : 'پول میخوام',
+            title : 'درخواست کمک',
             status: 'در انتظار برسی',
             date : '1401/05/09'
         },
         {
-            title : 'پول میخوام',
+            title : 'درخواست کمک',
             status: 'در انتظار برسی',
             date : '1401/05/09'
         }

@@ -45,12 +45,6 @@ function Header2() {
                                         <NavLink  to="/projects" activeClassName='active'>پـروژه ها</NavLink>
                                     </li>
                                     <li>
-                                        <a href="">رويداد ها</a>
-                                    </li>
-                                    <li>
-                                        <a href="">همياران</a>
-                                    </li>
-                                    <li>
                                         <a href="#">صفحه ها
                                             <span className="dd-trigger">
                                                 <i className="far fa-angle-down"></i>
@@ -69,10 +63,10 @@ function Header2() {
                                 </ul>
                             </div>
                             <div className="navbar-extra d-flex align-items-center">
-                                <a href="#" className="main-btn nav-btn d-none d-sm-inline-block">
+                                <Link to="/sign-up" className="main-btn nav-btn d-none d-sm-inline-block">
                                     ورود | ثبت نام <i className="far fa-arrow-left"></i>
-                                </a>
-                                <a href="#" onClick={()=>{toggleNavbar()}} className={isOpen ? "nav-toggler panel-opened" : "nav-toggler"}>
+                                </Link>
+                                <a onClick={()=>{toggleNavbar()}} className={isOpen ? "nav-toggler panel-opened" : "nav-toggler"}>
                                     <span></span>
                                 </a>
                             </div>
@@ -94,12 +88,6 @@ function Header2() {
                             <NavLink  to="/projects" activeClassName='active'>پـروژه ها</NavLink>
                         </li>
                         <li>
-                            <a href="">رويداد ها</a>
-                        </li>
-                        <li>
-                            <a href="">همياران</a>
-                        </li>
-                        <li>
                             <a href="#">صفحه ها
                                 <span className="dd-trigger">
                                                 <i className="far fa-angle-down"></i>
@@ -117,9 +105,9 @@ function Header2() {
                         <li><NavLink  to="/contact-us" activeClassName='active'>ارتباط بـا مـا</NavLink></li>
                     </ul>
                     <div className="panel-extra">
-                        <a href="#" className="main-btn btn-white">
+                        <Link to="/sign-up" className="main-btn btn-white">
                             ورود | ثبت نام <i className="far fa-arrow-left"></i>
-                        </a>
+                        </Link>
                     </div>
                     <a href="#" onClick={()=>{toggleNavbar()}} className="panel-close">
                         <i className="fal fa-times"></i>
