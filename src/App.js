@@ -24,38 +24,41 @@ import AboutUs from "./Components/Home/Contact/Contact";
 import Contact from "./Components/Home/Contact/Contact";
 import Project from "./Components/Home/Projects/Project";
 
-
 function App() {
+
   return (
     <>
-        <BrowserRouter>
-            <Routes>
-                <Route exact path="/" element={(<MainPage/>)}/>
-                <Route path="/admin" element={(<DashboardAdmin/>)}>
-                    <Route path="" element={<MainAdminPage />} />
-                    <Route path="crowd-funding" element={<CrowdFunding />} />
-                    <Route path="create-crowd-funding" element={<CreateCrowdFunding />} />
-                    <Route path="edit-crowd-funding" element={<EditCrowdFunding />} />
-                    <Route path="ticket" element={<AdminTicket />} />
-                    <Route path="ticket/chat" element={<AdminChat />} />
-                </Route>
-                <Route path="/dashboard" element={(<DashboardUser/>)}>
-                    <Route path="" element={<MainUserPage />} />
-                    <Route path="account" element={<UserAccount />} />
-                    <Route path="projects" element={<ProjectUser />} />
-                    <Route path="ticket" element={<UserTicket />} />
-                    <Route path="ticket/chat" element={<UserChat />} />
-                </Route>
-                <Route exact path="/sign-in" element={(<SignIn/>)}/>
-                <Route exact path="/sign-up" element={(<SignUp/>)}/>
-                <Route exact path="/OTP" element={(<OTP/>)}/>
-                <Route exact path="/enter-password" element={(<EnterPassword/>)}/>
-                <Route exact path="/reset-password" element={(<ResetPassword/>)}/>
-                <Route exact path="/projects" element={(<Project/>)}/>
-                <Route exact path="/project-details" element={(<ProjectDetails/>)}/>
-                <Route exact path="/contact-us" element={(<Contact/>)}/>
-            </Routes>
-        </BrowserRouter>
+
+            <BrowserRouter>
+                <Routes>
+                    <Route exact path="/" element={(<MainPage/>)}/>
+                    <Route path="/admin" element={(<DashboardAdmin/>)}>
+                        <Route path="" element={<MainAdminPage />} />
+                        <Route path="crowd-funding" element={<CrowdFunding />} />
+                        <Route path="create-crowd-funding" element={<CreateCrowdFunding />} />
+                        <Route path="edit-crowd-funding" element={<EditCrowdFunding />} />
+                        <Route path="ticket" element={<AdminTicket />} />
+                        <Route path="ticket/chat" element={<AdminChat />} />
+                    </Route>
+                    <Route path="/dashboard" element={(<DashboardUser/>)}>
+                        <Route path="" element={<MainUserPage />} />
+                        <Route path="account" element={<UserAccount />} />
+                        <Route path="projects" element={<ProjectUser />} />
+                        <Route path="ticket" element={<UserTicket />} />
+                        <Route path="ticket/chat" element={<UserChat />} />
+                    </Route>
+                    <Route exact path="/sign-in" element={(<SignIn/>)}/>
+                    <Route exact path="/sign-up" element={(<SignUp/>)}/>
+                    <Route exact path="/OTP" element={(<OTP/>)}/>
+                    <Route exact path="/enter-password" element={(<EnterPassword/>)}/>
+                    <Route exact path="/reset-password" element={(<ResetPassword/>)}/>
+                    <Route exact path="/projects" element={(<Project/>)}/>
+                    <Route exact path="/project-details" element={(<ProjectDetails/>)}/>
+                    <Route exact path="/contact-us" element={(<Contact/>)}/>
+                </Routes>
+            </BrowserRouter>
+
+
     </>
   );
 }

@@ -8,6 +8,13 @@ import Tabs from '@mui/material/Tabs';
 import TabPanel from '@mui/lab/TabPanel';
 import Comment from "./Comment";
 import Report from "./Report";
+import FormControl from "@mui/material/FormControl";
+import {FilledInput, InputAdornment, OutlinedInput} from "@mui/material";
+import InputLabel from "@mui/material/InputLabel";
+import createCache from "@emotion/cache";
+import {prefixer} from "stylis";
+import rtlPlugin from "stylis-plugin-rtl";
+import {CacheProvider} from '@emotion/react';
 
 function Details() {
     const [value, setValue] = React.useState('1');
@@ -15,6 +22,11 @@ function Details() {
     const handleChange = (event, newValue) => {
         setValue(newValue);
     };
+
+    const cacheRtl = createCache({
+        key: 'muirtl',
+        stylisPlugins: [prefixer, rtlPlugin],
+    });
 
     const styles = theme => ({
         indicator: {
@@ -68,17 +80,28 @@ function Details() {
                                     </div>
                                 </div>
                                 <div className="project-form">
-                                    <form action="#">
+                                    <div>
+                                        <h6 className={"mx-2"}>لطفا مبلغ حمایت خود را معین کنید</h6>
+                                        <div className={"mb-2"}>
+                                            <CacheProvider value={cacheRtl}>
+                                                <FormControl fullWidth sx={{ m: 1 }} variant="filled">
+                                                    <InputLabel sx={{fontFamily:"dana"}} htmlFor="filled-adornment-amount">مبلغ</InputLabel>
+                                                    <FilledInput
+                                                        id="filled-adornment-amount"
+                                                        endAdornment={<InputAdornment position="end">ریال</InputAdornment>}
+                                                    />
+                                                </FormControl>
+                                            </CacheProvider>
+                                        </div>
                                         <ul className="donation-amount">
-                                            <li>5,000</li>
                                             <li>50,000</li>
-                                            <li>180,000</li>
+                                            <li>100,000</li>
+                                            <li>200,000</li>
                                             <li>500,000</li>
-                                            <li>1,000,000</li>
                                         </ul>
                                         <button className="main-btn">هم اکنون کمک کنید <i
                                             className="far fa-arrow-left"></i></button>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -86,7 +109,8 @@ function Details() {
 
                             <TabContext value={value}>
                                 <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
-                                    <Tabs  TabIndicatorProps={{style: {background:'#02a95c'}}} value={value} onChange={handleChange}>
+                                    <Tabs TabIndicatorProps={{style: {background: '#02a95c'}}} value={value}
+                                          onChange={handleChange}>
                                         <Tab label="توضیحات" value="1"/>
                                         <Tab label="نظرات" value="2"/>
                                         <Tab label="گزارشات" value="3"/>
