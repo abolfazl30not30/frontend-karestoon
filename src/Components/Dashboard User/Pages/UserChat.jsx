@@ -1,40 +1,43 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./../../../style/dashboard/chat.css";
 import AdminAvatar from "./../../../assets/img/dashboard/admin.jpg"
 import UserAvatar from "./../../../assets/img/dashboard/user.jpg"
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import {deepOrange, deepPurple} from '@mui/material/colors';
+import {useParams} from "react-router-dom";
+import api from "../../../api/api";
 
 
 function UserChat() {
-    const [ticket, updateTicket] = useState(
-        {
-            title: 'درخواست کمک',
-            chat: [
+    const {id} = useParams()
+    const getChat = async () => {
+        const chatResponse = await api.get(`ticket/${id}`)
+        setChat(chatResponse.data)
+    }
+    useEffect(() => {
+        getChat()
+    }, []);
+
+    const [chat, setChat] = useState({
+        title: "",
+        chatList: []
+    })
+    const [typedMessage, updateTypedMessage] = useState("")
+
+
+    const handleSendMessage = async () => {
+        const accountData = await api.get(`user/search?username=${localStorage.getItem("phoneNumber")}`)
+        await api.put(`ticket/${id}`, {
+            chatList: [
                 {
-                    sender: 'user',
-                    name: 'میلاد',
-                    time: '1401/09/07',
-                    message: 'سلام'
-                },
-                {
-                    sender: 'admin',
-                    time: '1401/09/07',
-                    message: 'سلام پشتیبانی در خدمتم'
+                    sender: accountData.data.firstName + " " + accountData.data.lastName,
+                    message: typedMessage
                 }
             ]
-        }
-    )
-    const [typedMessage, updateTypedMessage] = useState()
-
-
-    const handleSendMessage = () => {
-        /* const newMessage = {
-             sender: 'user',
-             message: typedMessage
-         }
-         console.log(ticket)*/
+        })
+        updateTypedMessage("")
+        getChat()
     }
 
     return (
@@ -54,16 +57,16 @@ function UserChat() {
                     <div className="d-flex justify-content-center">
                         <div className="chat-messenger">
                             <div className="chat-messenger-header">
-                                {ticket.title}
+                                {chat.title}
                             </div>
                             <div className="chat-messenger-body">
                                 {
-                                    ticket.chat.map((mes) => (
-                                        mes.sender == 'admin'
+                                    chat.chatList.map((mes) => (
+                                        mes.sender === 'admin'
                                             ? (
                                                 <>
                                                     <div className="d-flex justify-content-center">
-                                                        <div className='chat-messenger-time'>{mes.time}</div>
+                                                        <div className='chat-messenger-time'>{mes.date}</div>
                                                     </div>
                                                     <div className="d-flex justify-content-end">
                                                         <div className="d-flex flex-column">
@@ -85,16 +88,16 @@ function UserChat() {
                                             : (
                                                 <>
                                                     <div className="d-flex justify-content-center">
-                                                        <div className='chat-messenger-time'>{mes.time}</div>
+                                                        <div className='chat-messenger-time'>{mes.date}</div>
                                                     </div>
                                                     <div className="d-flex justify-content-start">
                                                         <div className="d-flex flex-column">
                                                         <span className='chat-messenger-item-info'>
                                                              <Stack direction="row" spacing={2}>
                                                                     <Avatar sx={{bgcolor: deepPurple[500]}}
-                                                                            className='ms-2'>{mes.name.slice(0,1)}</Avatar>
+                                                                            className='ms-2'>{mes.sender.slice(0, 1)}</Avatar>
                                                                 </Stack>
-                                                            <span>{mes.name}</span>
+                                                            <span>{mes.sender}</span>
                                                         </span>
                                                             <div className='chat-messenger-item user-message'>
                                                                 {mes.message}
@@ -108,7 +111,7 @@ function UserChat() {
                             </div>
                             <div className="chat-messenger-footer">
                                 <input type='text' placeholder='یک پیام تایپ کنید'
-                                       onChange={(e) => updateTypedMessage(e.target.value)}/>
+                                       onChange={(e) => updateTypedMessage(e.target.value)} value={typedMessage}/>
                                 <button className='send-message' onClick={handleSendMessage}>ارسال</button>
                             </div>
                         </div>

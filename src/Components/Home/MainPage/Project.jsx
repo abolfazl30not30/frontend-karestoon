@@ -1,16 +1,32 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import projectImg1 from "../../../assets/img/my-wish-for-you-1600x900-1.jpg"
-import projectImg2 from "../../../assets/img/bazgasht-be-zandegi-150.jpg"
-import projectImg3 from "../../../assets/img/divarmehrabani.jpg"
-
 import Slider from "react-slick";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import {Link} from "react-router-dom"
 import {BsCash, BsHeart, BsHeartFill} from "react-icons/bs"
 import {GiCash} from "react-icons/gi"
+import api from "../../../api/api";
+import {LazyLoadImage} from "react-lazy-load-image-component";
 
 function Project() {
     const [isLiked, setIsLiked] = useState(false);
+    const [projects, setProjects] = useState([]);
+    const [profileList, setProfileList] = useState([]);
+    const getProjects = async () => {
+        const projectsResponse = await api.get("project")
+        setProjects(projectsResponse.data)
+        let profileUrls = []
+        for (let i = 0; i < projectsResponse.data.length; i++) {
+            const getProfileResponse = await api.get(`file/${projectsResponse.data[i].profileId}`, {responseType: 'blob'}).then(response => response.data)
+                .then((data) => {
+                    profileUrls.push(URL.createObjectURL(data));
+                })
+        }
+        setProfileList([...profileUrls])
+    }
+    useEffect(() => {
+        getProjects()
+    }, []);
 
     const settings = {
         dots: false,
@@ -19,9 +35,9 @@ function Project() {
         slidesToShow: 4,
         slidesToScroll: 1,
         draggable: true,
-        autoplay: false,
+        autoplay: true,
         arrows: false,
-        autoplaySpeed: 1000,
+        autoplaySpeed: 2000,
         responsive: [
             {
                 breakpoint: 1024,
@@ -69,201 +85,64 @@ function Project() {
                     </div>
                     <div className="row project-slider-one project-items project-style-one no-shadow">
                         <Slider {...settings}>
-                            <div className="px-3 col-md-3 col-sm-4 col-xl-12">
-                                <div className="project-item">
-                                    <div className="thumb"
-                                         style={{backgroundImage: `url(${projectImg1})`}}></div>
-                                    <div className="content">
-                                        <h5 className="title">
-                                            <a href="">بازگشت به زندگی</a>
-                                        </h5>
-                                        <div className="project-stats">
-                                            <div className="stats-value">
-                                                <span className="value">150,000,000 تومان</span>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="value-title mx-2">: مبلغ مورد نياز</span>
-                                                    <BsCash color="#5f5f5f"/>
-                                                </div>
+                            {
+                                projects.map((project, index) =>
+                                    <div key={index} className="px-3 col-md-3 col-sm-4 col-xl-12">
+                                        <div className="project-item">
+                                            <div className={"thumb"}>
+                                                <LazyLoadImage className={"thumb"} src={profileList[index]}
+                                                               alt=""
+                                                />
                                             </div>
-                                            <div className="stats-value">
-                                                <span className="value">15,000,000 تومان</span>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="value-title mx-2">: مبلغ حمايت شده</span>
-                                                    <GiCash color="#5f5f5f"/>
-                                                </div>
-                                            </div>
+                                            <div className="content">
+                                                <h5 className="title">
+                                                    <a href="">{project.title}</a>
+                                                </h5>
+                                                <div className="project-stats">
+                                                    <div className="stats-value">
+                                                        <span className="value">{project.expectedBudge} تومان</span>
+                                                        <div className="d-flex align-items-center">
+                                                            <span className="value-title mx-2">: مبلغ مورد نياز</span>
+                                                            <BsCash color="#5f5f5f"/>
+                                                        </div>
+                                                    </div>
+                                                    <div className="stats-value">
+                                                        <span className="value">{project.prepareBudge} تومان</span>
+                                                        <div className="d-flex align-items-center">
+                                                            <span className="value-title mx-2">: مبلغ حمايت شده</span>
+                                                            <GiCash color="#5f5f5f"/>
+                                                        </div>
+                                                    </div>
 
-                                            <div className="stats-bar mt-4" data-value="">
-                                                <div className="d-flex justify-content-end">
-                                                    <span style={{fontSize: "0.7rem"}}>60%</span>
+                                                    <div className="stats-bar mt-4" data-value="">
+                                                        <div className="d-flex justify-content-end">
+                                                            <span
+                                                                style={{fontSize: "0.7rem"}}>{project.progress}%</span>
+                                                        </div>
+                                                        <ProgressBar style={{height: "0.3rem"}} variant="success"
+                                                                     now={project.progress}/>
+                                                    </div>
                                                 </div>
-                                                <ProgressBar style={{height: "0.3rem"}} variant="success" now={60}/>
+                                                <div className="mt-5 d-flex justify-content-center">
+                                                    <Link to="/project-details" className={"main-btn"}
+                                                          style={{padding: "0.7rem 4.5rem"}}>حمايت ميكنم</Link>
+                                                </div>
+                                                <div className="mt-4  d-flex justify-content-between">
+                                                    <div className="d-flex align-items-center">
+                                                        <button onClick={toggleLikeBtn}
+                                                                style={{marginTop: "4px"}}>{isLiked ?
+                                                            <BsHeartFill color="#dc3545" fontSize="1.2rem"/> :
+                                                            <BsHeart fontSize="1.2rem"/>}</button>
+                                                        <span className="mx-2 mt-1">{project.likeCount}</span>
+                                                    </div>
+                                                    <span className="date"><i
+                                                        className="far fa-calendar-alt"></i>{project.startDate}</span>
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div className="mt-5 d-flex justify-content-center">
-                                            <Link to="/project-details" className={"main-btn"}
-                                                  style={{padding: "0.7rem 4.5rem"}}>حمايت ميكنم</Link>
-                                        </div>
-                                        <div className="mt-4  d-flex justify-content-between">
-                                            <div className="d-flex align-items-center">
-                                                <button onClick={toggleLikeBtn} style={{marginTop: "4px"}}>{isLiked ?
-                                                    <BsHeartFill color="#dc3545" fontSize="1.2rem"/> :
-                                                    <BsHeart fontSize="1.2rem"/>}</button>
-                                                <span className="mx-2 mt-1">142</span>
-                                            </div>
-                                            <span className="date"><i
-                                                className="far fa-calendar-alt"></i> 1401/09/18</span>
                                         </div>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div className="px-3 col-md-3 col-sm-4 col-xl-12">
-                                <div className="project-item">
-                                    <div className="thumb"
-                                         style={{backgroundImage: `url(${projectImg2})`}}></div>
-                                    <div className="content">
-                                        <h5 className="title">
-                                            <a href="">بازگشت به زندگی</a>
-                                        </h5>
-                                        <div className="project-stats">
-                                            <div className="stats-value">
-                                                <span className="value">150,000,000 تومان</span>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="value-title mx-2">: مبلغ مورد نياز</span>
-                                                    <BsCash color="#5f5f5f"/>
-                                                </div>
-                                            </div>
-                                            <div className="stats-value">
-                                                <span className="value">15,000,000 تومان</span>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="value-title mx-2">: مبلغ حمايت شده</span>
-                                                    <GiCash color="#5f5f5f"/>
-                                                </div>
-                                            </div>
-
-                                            <div className="stats-bar mt-4" data-value="">
-                                                <div className="d-flex justify-content-end">
-                                                    <span style={{fontSize: "0.7rem"}}>60%</span>
-                                                </div>
-                                                <ProgressBar style={{height: "0.3rem"}} variant="success" now={60}/>
-                                            </div>
-                                        </div>
-                                        <div className="mt-5 d-flex justify-content-center">
-                                            <Link to="/project-details" className={"main-btn"}
-                                                  style={{padding: "0.7rem 4.5rem"}}>حمايت ميكنم</Link>
-                                        </div>
-                                        <div className="mt-4  d-flex justify-content-between">
-                                            <div className="d-flex align-items-center">
-                                                <button onClick={toggleLikeBtn}>{isLiked ?
-                                                    <BsHeartFill color="#dc3545" fontSize="1.2rem"/> :
-                                                    <BsHeart fontSize="1.2rem"/>}</button>
-                                                <span className="mx-1">142</span>
-                                            </div>
-                                            <span className="date"><i
-                                                className="far fa-calendar-alt"></i> 1401/09/18</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="px-3 col-md-3 col-sm-4 col-xl-12">
-                                <div className="project-item">
-                                    <div className="thumb"
-                                         style={{backgroundImage: `url(${projectImg3})`}}></div>
-                                    <div className="content">
-                                        <h5 className="title">
-                                            <a href="">بازگشت به زندگی</a>
-                                        </h5>
-                                        <div className="project-stats">
-                                            <div className="stats-value">
-                                                <span className="value">150,000,000 تومان</span>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="value-title mx-2">: مبلغ مورد نياز</span>
-                                                    <BsCash color="#5f5f5f"/>
-                                                </div>
-                                            </div>
-                                            <div className="stats-value">
-                                                <span className="value">15,000,000 تومان</span>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="value-title mx-2">: مبلغ حمايت شده</span>
-                                                    <GiCash color="#5f5f5f"/>
-                                                </div>
-                                            </div>
-
-                                            <div className="stats-bar mt-4" data-value="">
-                                                <div className="d-flex justify-content-end">
-                                                    <span style={{fontSize: "0.7rem"}}>60%</span>
-                                                </div>
-                                                <ProgressBar style={{height: "0.3rem"}} variant="success" now={60}/>
-                                            </div>
-                                        </div>
-                                        <div className="mt-5 d-flex justify-content-center">
-                                            <Link to="/project-details" className={"main-btn"}
-                                                  style={{padding: "0.7rem 4.5rem"}}>حمايت ميكنم</Link>
-                                        </div>
-                                        <div className="mt-4  d-flex justify-content-between">
-                                            <div className="d-flex align-items-center">
-                                                <button onClick={toggleLikeBtn}>{isLiked ?
-                                                    <BsHeartFill color="#dc3545" fontSize="1.2rem"/> :
-                                                    <BsHeart fontSize="1.2rem"/>}</button>
-                                                <span className="mx-1">142</span>
-                                            </div>
-                                            <span className="date"><i
-                                                className="far fa-calendar-alt"></i> 1401/09/18</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div className="px-3 col-md-3 col-sm-4 col-xl-12">
-                                <div className="project-item">
-                                    <div className="thumb"
-                                         style={{backgroundImage: `url(${projectImg1})`}}></div>
-                                    <div className="content">
-                                        <h5 className="title">
-                                            <a href="">بازگشت به زندگی</a>
-                                        </h5>
-                                        <div className="project-stats">
-                                            <div className="stats-value">
-                                                <span className="value">150,000,000 تومان</span>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="value-title mx-2">: مبلغ مورد نياز</span>
-                                                    <BsCash color="#5f5f5f"/>
-                                                </div>
-                                            </div>
-                                            <div className="stats-value">
-                                                <span className="value">15,000,000 تومان</span>
-                                                <div className="d-flex align-items-center">
-                                                    <span className="value-title mx-2">: مبلغ حمايت شده</span>
-                                                    <GiCash color="#5f5f5f"/>
-                                                </div>
-                                            </div>
-
-                                            <div className="stats-bar mt-4" data-value="">
-                                                <div className="d-flex justify-content-end">
-                                                    <span style={{fontSize: "0.7rem"}}>60%</span>
-                                                </div>
-                                                <ProgressBar style={{height: "0.3rem"}} variant="success" now={60}/>
-                                            </div>
-                                        </div>
-                                        <div className="mt-5 d-flex justify-content-center">
-                                            <Link to="/project-details" className={"main-btn"}
-                                                  style={{padding: "0.7rem 4.5rem"}}>حمايت ميكنم</Link>
-                                        </div>
-                                        <div className="mt-4  d-flex justify-content-between">
-                                            <div className="d-flex align-items-center">
-                                                <button onClick={toggleLikeBtn}>{isLiked ?
-                                                    <BsHeartFill color="#dc3545" fontSize="1.2rem"/> :
-                                                    <BsHeart fontSize="1.2rem"/>}</button>
-                                                <span className="mx-1">142</span>
-                                            </div>
-                                            <span className="date"><i
-                                                className="far fa-calendar-alt"></i> 1401/09/18</span>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                                )
+                            }
                         </Slider>
                     </div>
                 </div>

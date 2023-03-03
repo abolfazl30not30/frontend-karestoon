@@ -1,8 +1,21 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import CountUp from "react-countup";
 import VisibilitySensor from 'react-visibility-sensor';
+import api from "../../../api/api";
 
 function Counter() {
+    const [activeUsersCount, setActiveUsersCount] = useState(0)
+    const [usersCount, setUsersCount] = useState(0);
+    const [completeProjectsCount, setCompleteProjectsCount] = useState(0)
+    const getData = async () => {
+        const dataResponse = await api.get("project/report/footer")
+        setUsersCount(dataResponse.data.users)
+        setActiveUsersCount(dataResponse.data.activeUsers)
+        setCompleteProjectsCount(dataResponse.data.completeProjects)
+    }
+    useEffect(() => {
+        getData()
+    }, []);
 
     return (
         <>
@@ -16,7 +29,7 @@ function Counter() {
                                 </div>
                                 <div className="content white-color">
                                     <div className="count-wrap">
-                                        <CountUp end={3598} redraw={true}>
+                                        <CountUp end={completeProjectsCount} redraw={true}>
                                             {({ countUpRef, start }) => (
                                                 <VisibilitySensor onChange={start} delayedCall>
                                                     <span className="count" ref={countUpRef} />
@@ -36,7 +49,7 @@ function Counter() {
                                 </div>
                                 <div className="content white-color">
                                     <div className="count-wrap">
-                                        <CountUp end={9634} redraw={true}>
+                                        <CountUp end={usersCount} redraw={true}>
                                             {({ countUpRef, start }) => (
                                                 <VisibilitySensor onChange={start} delayedCall>
                                                     <span className="count" ref={countUpRef} />
@@ -56,7 +69,7 @@ function Counter() {
                                 </div>
                                 <div className="content white-color">
                                     <div className="count-wrap">
-                                        <CountUp end={4756} redraw={true}>
+                                        <CountUp end={activeUsersCount} redraw={true}>
                                             {({ countUpRef, start }) => (
                                                 <VisibilitySensor onChange={start} delayedCall>
                                                     <span className="count" ref={countUpRef} />

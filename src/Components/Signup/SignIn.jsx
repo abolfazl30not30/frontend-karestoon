@@ -13,6 +13,7 @@ import Checkbox from '@mui/material/Checkbox';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../../api/api";
 
 
 
@@ -29,17 +30,16 @@ function SignIn() {
     const [error,updateError] = useState('')
     const navigate = useNavigate();
 
-    const handleGetPhoneNumber = () => {
+    const handleGetPhoneNumber = async () => {
         const regex = new RegExp('^(\\+98|0)?9\\d{9}$');
         let result = regex.test(phoneNumber);
 
-        /*Validate Phone Numbers*/
         if (result === true) {
-            const existNumber = true;
-            /*Exist Number*/
-            if (existNumber === true) {
+            const verifyResponse = await api.post("register/verify", {phoneNumber: phoneNumber})
+            localStorage.setItem("phoneNumber", phoneNumber)
+            if (verifyResponse.data.status === "exist") {
                 navigate("/enter-password");
-            } else {
+            } else if (verifyResponse.data.status === "newUser") {
                 navigate("/OTP");
             }
         } else {

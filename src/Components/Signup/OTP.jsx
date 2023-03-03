@@ -10,6 +10,8 @@ import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import OtpField from 'react-otp-field';
+import api from "../../api/api";
+import axios from "axios";
 
 const theme = createTheme({
     direction: 'rtl',
@@ -45,12 +47,28 @@ function OTP() {
             clearInterval(interval);
         };
     }, [seconds]);
-    const handleConfirmationOtp = () => {
-        otp === '1234'
-            ? (navigate("/sign-up"))
-            : (
-                updateError('کد تایید نامعتبر می باشد')
-            )
+    const handleConfirmationOtp = async () => {
+        console.log(localStorage.getItem("edw"))
+        if (localStorage.getItem("forgotPassword") === null) {
+
+            const otpResponse = await axios.post("http://localhost:8099/api/v1/register/verify/checkOTP", {
+                phoneNumber: localStorage.getItem("phoneNumber"),
+                otp: otp
+            }).then(() => (navigate("/sign-up")))
+                .catch(() => updateError('کد تایید نامعتبر می باشد'))
+
+        } else if (localStorage.getItem("forgotPassword") === "true") {
+
+            axios.post("http://localhost:8099/api/v1/register/forgotPassword/checkOTP", {
+                phoneNumber: localStorage.getItem("phoneNumber"),
+                otp: otp
+            }).then(() => {
+                navigate("/reset-password")
+                localStorage.removeItem("forgotPassword")
+            })
+                .catch(() => updateError('کد تایید نامعتبر می باشد'))
+        }
+
     }
     const resendOTP = () => {
         setMinutes(1);
@@ -70,7 +88,7 @@ function OTP() {
                                         <OtpField
                                             value={otp}
                                             onChange={updateOtp}
-                                            numInputs={4}
+                                            numInputs={6}
                                             onChangeRegex={/^([0-9]{0,})$/}
                                             autoFocus
                                             separator={<span>-</span>}

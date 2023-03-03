@@ -1,33 +1,17 @@
-import React,{useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import "../../../style/dashboard/payment.css"
+import api from "../../../api/api";
 
 function ProjectUser() {
-    const [donations,setDonations] = useState([
-        {
-            name : 'برای میلاد',
-            amount : '69000000',
-            date : '1401/05/06',
-            hour : '04:00'
-        },
-        {
-            name : 'برای میلاد',
-            amount : '69000000',
-            date : '1401/05/06',
-            hour : '04:00'
-        },
-        {
-            name : 'برای میلاد',
-            amount : '69000000',
-            date : '1401/05/06',
-            hour : '04:00'
-        },
-        {
-            name : 'برای میلاد',
-            amount : '69000000',
-            date : '1401/05/06',
-            hour : '04:00'
+    const [donations,setDonations] = useState([])
+    useEffect(() => {
+        const getDonations = async () => {
+            const getDonationsResponse = await api.get(`payment/search?username=${localStorage.getItem("phoneNumber")}`)
+            console.log(getDonationsResponse.data)
+            setDonations(getDonationsResponse.data)
         }
-    ])
+        getDonations()
+    }, []);
 
     return (
         <>
@@ -49,10 +33,10 @@ function ProjectUser() {
                             donations.map((d,i) =>(
                                 <tr>
                                     <td>{i+1}</td>
-                                    <td>{d.name}</td>
+                                    <td>{d.projectName}</td>
                                     <td>{d.amount}</td>
-                                    <td>{d.date}</td>
-                                    <td>{d.hour}</td>
+                                    <td>{d.date.split(" ")[0]}</td>
+                                    <td>{d.date.split(" ")[1]}</td>
                                 </tr>
                             ))
                         }

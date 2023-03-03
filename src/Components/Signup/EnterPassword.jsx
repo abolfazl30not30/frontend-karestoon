@@ -7,12 +7,11 @@ import rtlPlugin from 'stylis-plugin-rtl';
 import {CacheProvider} from '@emotion/react';
 import createCache from '@emotion/cache';
 import {prefixer} from 'stylis';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import {useState} from "react";
 import { useNavigate } from "react-router-dom";
+import api from "../../api/api";
+import LoginApi from "../../api/LoginApi";
 
 
 
@@ -26,13 +25,22 @@ const cacheRtl = createCache({
 
 function EnterPassword() {
     const [password,setPassword] = useState('')
+    const [error, setError] = useState([]);
     const navigate = useNavigate();
-    const handleEnterPassword = () => {
-        console.log(password)
-        navigate("/dashboard");
+    const handleEnterPassword = async () => {
+        await LoginApi({
+            password: password
+        }).then(() => navigate("/dashboard/projects")).catch(() => setError(["رمز عبور نامعتبر است."]))
     }
-    const handleResetPassword = () => {
-        navigate("/OTP");
+    const handleResetPassword = async () => {
+        const forgotPasswordResponse = await api.post("register/forgotPassword", {phoneNumber:localStorage.getItem("phoneNumber")})
+        if (forgotPasswordResponse.data.status === "OTPSent") {
+            localStorage.setItem("forgotPassword", "true")
+            navigate("/OTP");
+        } else if (forgotPasswordResponse.data.status === "newUser") {
+            navigate("/sign-in")
+        }
+
     }
 
     return (
@@ -47,6 +55,11 @@ function EnterPassword() {
                                     <div className="d-flex flex-column px-3">
                                         <TextField label="رمز عبور" type='number' className='mb-3'
                                                    onChange={(e) => setPassword(e.target.value)}/>
+                                        {
+                                            error.map((err, index) =>
+                                                <small className={"text-danger"} key={index}>{err}</small>
+                                            )
+                                        }
                                         <div
                                             onClick={handleResetPassword}
                                             style={{fontSize:'12px',color:'#444',margin:'.5rem 0',cursor:"pointer"}}

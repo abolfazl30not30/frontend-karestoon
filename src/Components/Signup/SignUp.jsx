@@ -7,13 +7,11 @@ import rtlPlugin from 'stylis-plugin-rtl';
 import {CacheProvider} from '@emotion/react';
 import createCache from '@emotion/cache';
 import {prefixer} from 'stylis';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
-import * as yup from 'yup';
+import api from "../../api/api";
+import LoginApi from "../../api/LoginApi";
 
 
 const theme = createTheme({
@@ -25,7 +23,7 @@ const cacheRtl = createCache({
 });
 
 function SignUp() {
-    const [phoneNumber, updatePhoneNumber] = useState('09335137958')
+    const [phoneNumber, updatePhoneNumber] = useState(localStorage.getItem("phoneNumber"))
     const [newUser, updateNewUser] = useState({
         name: '',
         family: '',
@@ -38,8 +36,18 @@ function SignUp() {
             [e.target.name]: e.target.value
         })
     }
-    const handleSignUpUser = () => {
-        navigate("/dashboard");
+    const handleSignUpUser = async () => {
+        // TODO: handle validation
+        const isValid = true
+        if (isValid) {
+            const createUserResponse = await api.post("register/create", {
+                phoneNumber: localStorage.getItem("phoneNumber"),
+                firstName: newUser.name,
+                lastName: newUser.family,
+                password: newUser.password
+            })
+            LoginApi({password: newUser.password}).then(() => navigate("/dashboard/projects"))
+        }
     }
 
     return (

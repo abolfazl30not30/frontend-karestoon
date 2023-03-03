@@ -1,18 +1,23 @@
 import React, {useState,useEffect} from 'react';
 import "../../../style/dashboard/account.css"
 import profileImage from './../../../assets/img/author-thumbs/09.png'
+import api from "../../../api/api";
 
 function UserAccount() {
-    const [user,updateUser] = useState({
-        phoneNumber : '09335137958',
-        name : 'میلاد',
-        family : 'زارع' ,
-        password: '6996'
-    })
+    const [user,updateUser] = useState({})
 
+    useEffect(() => {
+        const getUser = async () => {
+            const userResponse = await api.get(`user/search?username=${localStorage.getItem("phoneNumber")}`)
+            updateUser(userResponse.data)
+        }
+        getUser()
+    }, []);
 
-    const handleEditAccount = () => {
-        console.log(user)
+    const handleEditAccount = async () => {
+        const userUpdateResponse = await api.put(`user/${localStorage.getItem("phoneNumber")}`, {
+            ...user
+        })
     }
 
     return (
@@ -26,7 +31,7 @@ function UserAccount() {
                             <label htmlFor="project-title" className="font-bold pr-1">
                                 شماره موبایل
                             </label>
-                            <input value={user.phoneNumber} disabled='true' type="text" tabIndex="1" placeholder="شماره موبایل"
+                            <input value={localStorage.getItem("phoneNumber")} disabled='true' type="text" tabIndex="1" placeholder="شماره موبایل"
                                    className="bg-white border-2 border-input rounded-md py-1.5 px-2 text-sm leading-6"
                             />
                         </div>
@@ -36,10 +41,10 @@ function UserAccount() {
                                 نام
                             </label>
                             <input
-                                value={user.name}
+                                value={user.firstName}
                                 onChange={(e) => updateUser(existingValues => ({
                                     ...existingValues,
-                                    name: e.target.value
+                                    firstName: e.target.value
                                 }))}
                                 type="text" tabIndex="1" placeholder="نام"
                                    className="bg-white border-2 border-input rounded-md py-1.5 px-2 text-sm leading-6"
@@ -51,10 +56,10 @@ function UserAccount() {
                                 نام خانوادگی
                             </label>
                             <input
-                                value={user.family}
+                                value={user.lastName}
                                 onChange={(e) => updateUser(existingValues => ({
                                     ...existingValues,
-                                    family: e.target.value
+                                    lastName: e.target.value
                                 }))}
                                 type="text" tabIndex="1" placeholder="نام خانوادگی"
                                    className="bg-white border-2 border-input rounded-md py-1.5 px-2 text-sm leading-6"

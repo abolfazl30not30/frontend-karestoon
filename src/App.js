@@ -41,11 +41,11 @@ function App() {
                         <Route path="ticket/chat" element={<AdminChat />} />
                     </Route>
                     <Route path="/dashboard" element={(<DashboardUser/>)}>
-                        <Route path="" element={<MainUserPage />} />
+                        {/*<Route path="" element={<MainUserPage />} />*/}
                         <Route path="account" element={<UserAccount />} />
                         <Route path="projects" element={<ProjectUser />} />
                         <Route path="ticket" element={<UserTicket />} />
-                        <Route path="ticket/chat" element={<UserChat />} />
+                        <Route path="ticket/:id" element={<UserChat />} />
                     </Route>
                     <Route exact path="/sign-in" element={(<SignIn/>)}/>
                     <Route exact path="/sign-up" element={(<SignUp/>)}/>

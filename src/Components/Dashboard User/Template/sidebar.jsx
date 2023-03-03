@@ -26,14 +26,14 @@ function Sidebar() {
                     <img src={Logo}/>
                 </div>
                 <div className="sidebar-list mt-4">
-                    <Link to="/dashboard" className='w-100'>
-                        <div className="d-flex flex-row align-items-center sidebar-list-item">
-                            <UilWindow />
-                            <div className="sidebar-list-item-title">
-                                داشبورد
-                            </div>
-                        </div>
-                    </Link>
+                    {/*<Link to="/dashboard" className='w-100'>*/}
+                    {/*    <div className="d-flex flex-row align-items-center sidebar-list-item">*/}
+                    {/*        <UilWindow />*/}
+                    {/*        <div className="sidebar-list-item-title">*/}
+                    {/*            داشبورد*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</Link>*/}
                     <Link to="/dashboard/projects" className='w-100'>
                         <div className="d-flex flex-row align-items-center sidebar-list-item">
                             <UilThumbsUp/>
@@ -60,12 +60,14 @@ function Sidebar() {
                             </div>
                         </div>
                     </Link>
-                    <div className="d-flex flex-row align-items-center sidebar-list-item">
-                        <UilSignout />
-                        <div className="sidebar-list-item-title">
-                            خروج
+                    <Link onClick={() => localStorage.clear()} to="/" className={"w-100"}>
+                        <div className="d-flex flex-row align-items-center sidebar-list-item">
+                            <UilSignout />
+                            <div className="sidebar-list-item-title">
+                                خروج
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </>

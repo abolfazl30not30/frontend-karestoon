@@ -7,13 +7,10 @@ import rtlPlugin from 'stylis-plugin-rtl';
 import {CacheProvider} from '@emotion/react';
 import createCache from '@emotion/cache';
 import {prefixer} from 'stylis';
-import FormGroup from '@mui/material/FormGroup';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
 import KeyboardBackspaceIcon from '@mui/icons-material/KeyboardBackspace';
 import {useState} from "react";
-import { useNavigate } from "react-router-dom";
-
+import {useNavigate} from "react-router-dom";
+import api from "../../api/api";
 
 
 const theme = createTheme({
@@ -25,10 +22,13 @@ const cacheRtl = createCache({
 });
 
 function ResetPassword() {
-    const [password,setPassword] = useState('')
+    const [password, setPassword] = useState('')
     const navigate = useNavigate();
-    const handleResetPassword = () => {
-        navigate("/dashboard");
+    const handleResetPassword = async () => {
+        await api.post("register/updatePassword", {
+            phoneNumber: localStorage.getItem("phoneNumber"),
+            password: password
+        }).then(() => navigate("/enter-password"))
     }
 
     return (
@@ -42,7 +42,8 @@ function ResetPassword() {
                                 <CacheProvider value={cacheRtl}>
                                     <div className="d-flex flex-column px-3">
                                         <TextField label="رمز عبور جدید" type='number' className='mb-3'
-                                                   onChange={(e) => setPassword(e.target.value)}/>
+                                                   onChange={(e) => setPassword(e.target.value)}
+                                                   value={password}/>
 
 
                                         <button className='login-btn' onClick={handleResetPassword}>بازیابی</button>
