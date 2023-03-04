@@ -10,6 +10,24 @@ import api from "../../../api/api";
 
 
 function UserChat() {
+    useEffect(() => {
+        if (localStorage.getItem('role') !== "USER") {
+            localStorage.clear()
+            props.history.push("/sign-in")
+        }
+    }, [props.history]);
+
+    const [constructorHasRun, setConstructorHasRun] = useState(false);
+    const constructor = () => {
+        if (constructorHasRun) return;
+        // const navigate = useNavigate();
+        if (localStorage.getItem('role') !== "USER") {
+            localStorage.clear()
+            window.location = ("/sign-in")
+        }
+        setConstructorHasRun(true);
+    };
+    constructor()
     const {id} = useParams()
     const getChat = async () => {
         const chatResponse = await api.get(`ticket/${id}`)

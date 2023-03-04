@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from "react"
-import {Link} from "react-router-dom"
+import {Link, useNavigate} from "react-router-dom"
 import Button from '@mui/material/Button';
 import TextField from '@mui/material/TextField';
 import Dialog from '@mui/material/Dialog';
@@ -10,8 +10,25 @@ import DialogTitle from '@mui/material/DialogTitle';
 import "./../../../style/dashboard/ticket.css"
 import api from "../../../api/api";
 
+function AdminTicket(props) {
+    useEffect(() => {
+        if (localStorage.getItem('role') !== "ADMIN") {
+            localStorage.clear()
+            props.history.push("/sign-in")
+        }
+    }, [props.history]);
 
-function AdminTicket() {
+    const [constructorHasRun, setConstructorHasRun] = useState(false);
+    const constructor = () => {
+        if (constructorHasRun) return;
+        // const navigate = useNavigate();
+        if (localStorage.getItem('role') !== "ADMIN") {
+            localStorage.clear()
+            window.location = ("/sign-in")
+        }
+        setConstructorHasRun(true);
+    };
+    constructor()
     const [tickets,setTickets] = useState([])
     // const [open, setOpen] = React.useState(false);
     const getTickets = async () => {

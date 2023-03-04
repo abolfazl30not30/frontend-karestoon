@@ -2,14 +2,28 @@ import React, {useEffect, useState} from "react";
 import "./../../../style/dashboard/chat.css";
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
-import AdminAvatar from "./../../../assets/img/dashboard/admin.jpg"
-import UserAvatar from "./../../../assets/img/dashboard/user.jpg"
-import {useParams} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
 import api from "../../../api/api";
 import {deepOrange, deepPurple} from "@mui/material/colors";
 
-
 function AdminChat() {
+    useEffect(() => {
+        if (localStorage.getItem('role') !== "ADMIN") {
+            localStorage.clear()
+            props.history.push("/sign-in")
+        }
+    }, [props.history]);
+
+    const [constructorHasRun, setConstructorHasRun] = useState(false);
+    const constructor = () => {
+        if (constructorHasRun) return;
+        if (localStorage.getItem('role') !== "ADMIN") {
+            localStorage.clear()
+            window.location = ("/sign-in")
+        }
+        setConstructorHasRun(true);
+    };
+    constructor()
     const {id} = useParams()
     const getChat = async () => {
         const chatResponse = await api.get(`ticket/${id}`)

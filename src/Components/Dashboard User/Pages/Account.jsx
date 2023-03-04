@@ -4,6 +4,24 @@ import profileImage from './../../../assets/img/author-thumbs/09.png'
 import api from "../../../api/api";
 
 function UserAccount() {
+    useEffect(() => {
+        if (localStorage.getItem('role') !== "USER") {
+            localStorage.clear()
+            props.history.push("/sign-in")
+        }
+    }, [props.history]);
+
+    const [constructorHasRun, setConstructorHasRun] = useState(false);
+    const constructor = () => {
+        if (constructorHasRun) return;
+        // const navigate = useNavigate();
+        if (localStorage.getItem('role') !== "USER") {
+            localStorage.clear()
+            window.location = ("/sign-in")
+        }
+        setConstructorHasRun(true);
+    };
+    constructor()
     const [user,updateUser] = useState({})
 
     useEffect(() => {

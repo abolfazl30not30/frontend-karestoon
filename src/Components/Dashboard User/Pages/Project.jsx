@@ -3,6 +3,24 @@ import "../../../style/dashboard/payment.css"
 import api from "../../../api/api";
 
 function ProjectUser() {
+    useEffect(() => {
+        if (localStorage.getItem('role') !== "USER") {
+            localStorage.clear()
+            props.history.push("/sign-in")
+        }
+    }, [props.history]);
+
+    const [constructorHasRun, setConstructorHasRun] = useState(false);
+    const constructor = () => {
+        if (constructorHasRun) return;
+        // const navigate = useNavigate();
+        if (localStorage.getItem('role') !== "USER") {
+            localStorage.clear()
+            window.location = ("/sign-in")
+        }
+        setConstructorHasRun(true);
+    };
+    constructor()
     const [donations,setDonations] = useState([])
     useEffect(() => {
         const getDonations = async () => {
