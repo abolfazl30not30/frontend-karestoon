@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import {UilPen, UilTrash} from "@iconscout/react-unicons";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
@@ -15,6 +15,7 @@ import {CacheProvider, ThemeProvider} from "@emotion/react";
 import {createTheme} from "@mui/material/styles";
 import createCache from "@emotion/cache";
 import rtlPlugin from "stylis-plugin-rtl";
+import api from "../../../api/api";
 
 // Create RTL MUI
 const theme = createTheme({
@@ -29,71 +30,40 @@ function RTL(props) {
     return <CacheProvider value={cacheRtl}>{props.children}</CacheProvider>;
 }
 
-export default function Admins () {
-    const [user, setUser] = useState([
-        {
-            firstName: 'برای میلاد',
-            lastName: '69000000',
-            phoneNumber: '50000000',
-            password: '1401/05/06',
-            id: '1'
-        },
-        {
-            firstName: 'برای میلاد',
-            lastName: '69000000',
-            phoneNumber: '50000000',
-            password: '1401/05/06',
-            id: '2'
-        },
-        {
-            firstName: 'برای میلاد',
-            lastName: '69000000',
-            phoneNumber: '50000000',
-            password: '1401/05/06',
-            id: '3'
-        },
-        {
-            firstName: 'برای میلاد',
-            lastName: '69000000',
-            phoneNumber: '50000000',
-            password: '1401/05/06',
-            id: '4'
-        },
-        {
-            firstName: 'برای میلاد',
-            lastName: '69000000',
-            phoneNumber: '50000000',
-            password: '1401/05/06',
-            id: '5'
-        },
-        {
-            firstName: 'برای میلاد',
-            lastName: '69000000',
-            phoneNumber: '50000000',
-            password: '1401/05/06',
-            id: '6'
-        },
-        {
-            firstName: 'برای میلاد',
-            lastName: '69000000',
-            phoneNumber: '50000000',
-            password: '1401/05/06',
-            id: '7'
-        },
-        {
-            firstName: 'برای میلاد',
-            lastName: '69000000',
-            phoneNumber: '50000000',
-            password: '1401/05/06',
-            id: '8'
+export default function Admins (props) {
+    useEffect(() => {
+        if (localStorage.getItem('role') !== "MANAGER") {
+            localStorage.clear()
+            props.history.push("/sign-in")
         }
+    }, [props.history]);
 
-    ]);
+    const [constructorHasRun, setConstructorHasRun] = useState(false);
+    const constructor = () => {
+        if (constructorHasRun) return;
+        if (localStorage.getItem('role') !== "MANAGER") {
+            localStorage.clear()
+            window.location = ("/sign-in")
+        }
+        setConstructorHasRun(true);
+    };
+    constructor()
+
+    const getAdmins = async () => {
+        const getAdminsResponse = await api.get("user/search?role=ADMIN")
+        setAdmins(getAdminsResponse.data)
+    }
+    useEffect(() => {
+        getAdmins()
+    }, []);
+
+    const [admins, setAdmins] = useState([]);
     const [addAdmin, setAddAdmin] = useState({
         firstName: '',
         lastName: '',
         phoneNumber: '',
-        password: ''
+        password: '',
+        role: 'ADMIN'
     });
     const [adminEdit, setAdminEdit] = useState({
         firstName: '',
@@ -120,13 +90,7 @@ export default function Admins () {
         setOpenEditAdmin(true);
     }
     function handleEditAdmin ()  {
-        let updateAdmin = user.map((admin) => {
-            if (admin.id === adminTarget) {
-                return adminEdit
-            }
-            return admin
-        })
-        setUser(updateAdmin)
+        api.put(`user/${adminTarget}`, adminEdit)
         setOpenEditAdmin(false);
     }
     const onChangeInputEdit = (e) => {
@@ -147,13 +111,14 @@ export default function Admins () {
             [e.target.name]: e.target.value
         })
     }
-    const handleAddAdmin = () => {
-        console.log(addAdmin)
+    const handleAddAdmin = async () => {
+        await api.post("user", addAdmin)
+        getAdmins()
         setOpenAddAdmin(false);
     }
-    const handleRemoveAdmin = e => {
-        const projectId = e.target.getAttribute("id")
-        setUser(user.filter(item => item.id !== projectId))
+    const handleRemoveAdmin = async e => {
+        await api.delete(`user/${e.target.getAttribute("id")}`)
+        getAdmins()
         setOpen(false);
     }
 
@@ -169,7 +134,7 @@ export default function Admins () {
                             <CacheProvider value={cacheRtl}>
                                 <ThemeProvider theme={theme}>
                                     <div dir="rtl">
-                                        <div className="d-flex flex-column px-4">
+                                        <div className="d-flex flex-column px-4 mt-2">
                                             <TextField
                                                 className='mb-4'
                                                 name="firstName"
@@ -223,7 +188,7 @@ export default function Admins () {
                         </thead>
                         <tbody>
                         {
-                            user.map((u, i) => (
+                            admins.map((u, i) => (
                                 <tr>
                                     <td>{i + 1}</td>
                                     <td>{u.firstName}</td>

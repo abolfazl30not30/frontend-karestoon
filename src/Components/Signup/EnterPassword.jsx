@@ -35,6 +35,8 @@ function EnterPassword() {
                 navigate("/admin/crowd-funding")
             } else if (localStorage.getItem("role") === "USER") {
                 navigate("/dashboard/projects")
+            } else if (localStorage.getItem("role") === "MANAGER") {
+                navigate("/manager/admins")
             }
         }).catch(() => setError(["رمز عبور نامعتبر است."]))
     }
@@ -59,7 +61,7 @@ function EnterPassword() {
                                 <h2 className='signup-box-title'>رمز عبور</h2>
                                 <CacheProvider value={cacheRtl}>
                                     <div className="d-flex flex-column px-3">
-                                        <TextField label="رمز عبور" type='number' className='mb-3'
+                                        <TextField label="رمز عبور" className='mb-3'
                                                    onChange={(e) => setPassword(e.target.value)}/>
                                         {
                                             error.map((err, index) =>

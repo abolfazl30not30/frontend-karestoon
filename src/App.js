@@ -20,6 +20,9 @@ import EditCrowdFunding from "./Components/Dashboard Admin/Pages/EditCrowdFundin
 import ProjectDetails from "./Components/Home/projectDetails/projectDetails";
 import Contact from "./Components/Home/Contact/Contact";
 import Project from "./Components/Home/Projects/Project";
+import MainManagerPage from "./Components/Dashboard Manager/Pages/main";
+import DashboardManager from "./Components/Dashboard Manager/Template/master";
+import Admins from "./Components/Dashboard Manager/Pages/Admins";
 
 function App() {
 
@@ -31,11 +34,11 @@ function App() {
                     <Route exact path="/" element={(<MainPage/>)}/>
                     <Route path="/manager" element={(<DashboardManager/>)}>
                         <Route path="" element={<MainManagerPage />} />
-                        <Route path="crowd-funding" element={<CrowdFunding />} />
-                        <Route path="create-crowd-funding" element={<CreateCrowdFunding />} />
-                        <Route path="edit-crowd-funding" element={<EditCrowdFunding />} />
-                        <Route path="ticket" element={<ManagerTicket />} />
-                        <Route path="ticket/chat" element={<ManagerChat />} />
+                        {/*<Route path="crowd-funding" element={<CrowdFunding />} />*/}
+                        {/*<Route path="create-crowd-funding" element={<CreateCrowdFunding />} />*/}
+                        {/*<Route path="edit-crowd-funding" element={<EditCrowdFunding />} />*/}
+                        {/*<Route path="ticket" element={<ManagerTicket />} />*/}
+                        {/*<Route path="ticket/chat" element={<ManagerChat />} />*/}
                         <Route path="admins" element={<Admins />} />
                     </Route>
                     <Route path="/admin" element={(<DashboardAdmin/>)}>
