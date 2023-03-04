@@ -28,14 +28,14 @@ function Sidebar() {
                     <img src={Logo}/>
                 </div>
                 <div className="sidebar-list mt-4">
-                    <Link to="/admin" className='w-100'>
-                        <div className="d-flex flex-row align-items-center sidebar-list-item">
-                            <UilWindow />
-                            <div className="sidebar-list-item-title">
-                                داشبورد
-                            </div>
-                        </div>
-                    </Link>
+                    {/*<Link to="/admin" className='w-100'>*/}
+                    {/*    <div className="d-flex flex-row align-items-center sidebar-list-item">*/}
+                    {/*        <UilWindow />*/}
+                    {/*        <div className="sidebar-list-item-title">*/}
+                    {/*            داشبورد*/}
+                    {/*        </div>*/}
+                    {/*    </div>*/}
+                    {/*</Link>*/}
                     <Link to="/admin/crowd-funding" className='w-100'>
                         <div className="d-flex flex-row align-items-center sidebar-list-item">
                             <UilFolder />

@@ -7,8 +7,6 @@ import SignIn from "./Components/Signup/SignIn";
 import SignUp from "./Components/Signup/SignUp";
 import CrowdFunding from "./Components/Dashboard Admin/Pages/Crowdfunding";
 import CreateCrowdFunding from "./Components/Dashboard Admin/Pages/CreateCrowdFunding"
-import MainAdminPage from "./Components/Dashboard Admin/Pages/main"
-import MainUserPage from "./Components/Dashboard User/Pages/Main"
 import ProjectUser from "./Components/Dashboard User/Pages/Project"
 import UserAccount from "./Components/Dashboard User/Pages/Account"
 import AdminTicket from "./Components/Dashboard Admin/Pages/AdminTicket"
@@ -20,7 +18,6 @@ import EnterPassword from "./Components/Signup/EnterPassword"
 import ResetPassword from "./Components/Signup/ResetPassword"
 import EditCrowdFunding from "./Components/Dashboard Admin/Pages/EditCrowdFunding"
 import ProjectDetails from "./Components/Home/projectDetails/projectDetails";
-import AboutUs from "./Components/Home/Contact/Contact";
 import Contact from "./Components/Home/Contact/Contact";
 import Project from "./Components/Home/Projects/Project";
 
@@ -33,10 +30,10 @@ function App() {
                 <Routes>
                     <Route exact path="/" element={(<MainPage/>)}/>
                     <Route path="/admin" element={(<DashboardAdmin/>)}>
-                        <Route path="" element={<MainAdminPage />} />
+                        {/*<Route path="" element={<MainAdminPage />} />*/}
                         <Route path="crowd-funding" element={<CrowdFunding />} />
                         <Route path="create-crowd-funding" element={<CreateCrowdFunding />} />
-                        <Route path="edit-crowd-funding" element={<EditCrowdFunding />} />
+                        <Route path="edit-crowd-funding/:id" element={<EditCrowdFunding />} />
                         <Route path="ticket" element={<AdminTicket />} />
                         <Route path="ticket/chat" element={<AdminChat />} />
                     </Route>

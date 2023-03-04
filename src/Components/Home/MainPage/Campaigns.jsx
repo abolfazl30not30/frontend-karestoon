@@ -9,6 +9,7 @@ import img2 from "../../../assets/img/project/project-list-03.jpg";
 import {Link} from "react-router-dom";
 import api from "../../../api/api";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import {numberSlicer} from "../../../helper/numberSlicer";
 
 function Campaigns() {
     const [isLiked, setIsLiked] = useState(false);
@@ -110,14 +111,14 @@ function Campaigns() {
                                                 </div>
                                                 <div className="project-stats">
                                                     <div className="stats-value">
-                                                        <span className="value">{project.expectedBudge} تومان</span>
+                                                        <span className="value">{numberSlicer(project.expectedBudge.toString())} تومان</span>
                                                         <div className="d-flex align-items-center">
                                                             <span className="value-title mx-2"> مبلغ مورد نياز</span>
                                                             <BsCash color="#dcdcdc"/>
                                                         </div>
                                                     </div>
                                                     <div className="stats-value">
-                                                        <span className="value">{project.prepareBudge} تومان</span>
+                                                        <span className="value">{numberSlicer(project.prepareBudge.toString())} تومان</span>
                                                         <div className="d-flex align-items-center">
                                                             <span className="value-title mx-2"> مبلغ حمايت شده</span>
                                                             <GiCash color="#dcdcdc"/>

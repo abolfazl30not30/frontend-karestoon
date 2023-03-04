@@ -7,6 +7,7 @@ import {BsCash, BsHeart, BsHeartFill} from "react-icons/bs"
 import {GiCash} from "react-icons/gi"
 import api from "../../../api/api";
 import {LazyLoadImage} from "react-lazy-load-image-component";
+import {numberSlicer} from "../../../helper/numberSlicer";
 
 function Project() {
     const [isLiked, setIsLiked] = useState(false);
@@ -100,14 +101,14 @@ function Project() {
                                                 </h5>
                                                 <div className="project-stats">
                                                     <div className="stats-value">
-                                                        <span className="value">{project.expectedBudge} تومان</span>
+                                                        <span className="value">{numberSlicer(project.expectedBudge.toString())} تومان</span>
                                                         <div className="d-flex align-items-center">
                                                             <span className="value-title mx-2">: مبلغ مورد نياز</span>
                                                             <BsCash color="#5f5f5f"/>
                                                         </div>
                                                     </div>
                                                     <div className="stats-value">
-                                                        <span className="value">{project.prepareBudge} تومان</span>
+                                                        <span className="value">{numberSlicer(project.prepareBudge.toString())} تومان</span>
                                                         <div className="d-flex align-items-center">
                                                             <span className="value-title mx-2">: مبلغ حمايت شده</span>
                                                             <GiCash color="#5f5f5f"/>

@@ -30,7 +30,13 @@ function EnterPassword() {
     const handleEnterPassword = async () => {
         await LoginApi({
             password: password
-        }).then(() => navigate("/dashboard/projects")).catch(() => setError(["رمز عبور نامعتبر است."]))
+        }).then(() => {
+            if (localStorage.getItem("role") === "ADMIN") {
+                navigate("/admin/crowd-funding")
+            } else if (localStorage.getItem("role") === "USER") {
+                navigate("/dashboard/projects")
+            }
+        }).catch(() => setError(["رمز عبور نامعتبر است."]))
     }
     const handleResetPassword = async () => {
         const forgotPasswordResponse = await api.post("register/forgotPassword", {phoneNumber:localStorage.getItem("phoneNumber")})
