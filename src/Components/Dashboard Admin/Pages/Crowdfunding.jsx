@@ -10,7 +10,7 @@ import api from "../../../api/api";
 import {useNavigate} from "react-router-dom";
 
 
-function CrowdFunding() {
+function CrowdFunding(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "ADMIN") {
             localStorage.clear()

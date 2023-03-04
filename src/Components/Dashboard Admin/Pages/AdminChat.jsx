@@ -6,7 +6,7 @@ import {useNavigate, useParams} from "react-router-dom";
 import api from "../../../api/api";
 import {deepOrange, deepPurple} from "@mui/material/colors";
 
-function AdminChat() {
+function AdminChat(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "ADMIN") {
             localStorage.clear()

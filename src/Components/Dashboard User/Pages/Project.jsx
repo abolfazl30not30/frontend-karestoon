@@ -2,7 +2,7 @@ import React, {useEffect, useState} from 'react';
 import "../../../style/dashboard/payment.css"
 import api from "../../../api/api";
 
-function ProjectUser() {
+function ProjectUser(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "USER") {
             localStorage.clear()

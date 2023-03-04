@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from "react";
 
-function MainUserPage() {
+function MainUserPage(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "USER") {
             localStorage.clear()

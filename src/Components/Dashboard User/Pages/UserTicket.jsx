@@ -11,7 +11,7 @@ import "./../../../style/dashboard/ticket.css"
 import api from "../../../api/api";
 
 
-function UserTicket() {
+function UserTicket(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "USER") {
             localStorage.clear()

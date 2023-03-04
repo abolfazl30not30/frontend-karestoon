@@ -38,7 +38,7 @@ const calendarStyles= {
 }
 
 
-export default function CreateCrowdFunding() {
+export default function CreateCrowdFunding(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "ADMIN") {
             localStorage.clear()

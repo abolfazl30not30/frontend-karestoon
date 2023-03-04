@@ -3,7 +3,7 @@ import "../../../style/dashboard/account.css"
 import profileImage from './../../../assets/img/author-thumbs/09.png'
 import api from "../../../api/api";
 
-function UserAccount() {
+function UserAccount(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "USER") {
             localStorage.clear()

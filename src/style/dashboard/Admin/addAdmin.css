@@ -1,0 +1,23 @@
+.project-button-edit {
+    margin: 0 0.5rem;
+    background-color: #ffea00 !important;
+    color: #000 !important;
+    font-size: 10px;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.project-button-delete {
+    margin: 0 0.5rem;
+    background-color: #e53935 !important;
+    color: #fff !important;
+    font-size: 10px;
+    padding: 0.3rem;
+    border-radius: 0.5rem;
+}
+
+.project-button-edit svg,
+.project-button-delete svg {
+    width: 15px;
+    height: 15px;
+}

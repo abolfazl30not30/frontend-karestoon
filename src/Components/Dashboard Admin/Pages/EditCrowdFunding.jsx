@@ -49,7 +49,7 @@ const calendarStyles = {
 }
 
 
-export default function EditCrowdFunding() {
+export default function EditCrowdFunding(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "ADMIN") {
             localStorage.clear()

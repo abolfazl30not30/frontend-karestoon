@@ -9,7 +9,7 @@ import {useParams} from "react-router-dom";
 import api from "../../../api/api";
 
 
-function UserChat() {
+function UserChat(props) {
     useEffect(() => {
         if (localStorage.getItem('role') !== "USER") {
             localStorage.clear()
