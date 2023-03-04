@@ -35,7 +35,7 @@ function App() {
                         <Route path="create-crowd-funding" element={<CreateCrowdFunding />} />
                         <Route path="edit-crowd-funding/:id" element={<EditCrowdFunding />} />
                         <Route path="ticket" element={<AdminTicket />} />
-                        <Route path="ticket/chat" element={<AdminChat />} />
+                        <Route path="ticket/:id" element={<AdminChat />} />
                     </Route>
                     <Route path="/dashboard" element={(<DashboardUser/>)}>
                         {/*<Route path="" element={<MainUserPage />} />*/}

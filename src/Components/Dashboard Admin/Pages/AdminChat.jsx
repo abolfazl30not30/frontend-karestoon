@@ -1,38 +1,43 @@
-import React, {useState} from "react";
+import React, {useEffect, useState} from "react";
 import "./../../../style/dashboard/chat.css";
 import Avatar from '@mui/material/Avatar';
 import Stack from '@mui/material/Stack';
 import AdminAvatar from "./../../../assets/img/dashboard/admin.jpg"
 import UserAvatar from "./../../../assets/img/dashboard/user.jpg"
+import {useParams} from "react-router-dom";
+import api from "../../../api/api";
+import {deepOrange, deepPurple} from "@mui/material/colors";
 
 
 function AdminChat() {
-    const [ticket, updateTicket] = useState(
-        {
-            title: 'عنوان',
-            chat: [
-                {
-                    sender: 'user',
-                    time: '1401/09/07',
-                    message: 'سلام'
-                },
-                {
-                    sender: 'admin',
-                    time: '1401/09/07',
-                    message: 'سلام پشتیبانی در خدمتم'
-                }
-            ]
-        }
-    )
+    const {id} = useParams()
+    const getChat = async () => {
+        const chatResponse = await api.get(`ticket/${id}`)
+        setChat(chatResponse.data)
+    }
+    useEffect(() => {
+        getChat()
+    }, []);
+
+    const [chat, setChat] = useState({
+        title: "",
+        chatList: []
+    })
     const [typedMessage, updateTypedMessage] = useState()
 
 
-    const handleSendMessage = () => {
-       /* const newMessage = {
-            sender: 'user',
-            message: typedMessage
-        }
-        console.log(ticket)*/
+    const handleSendMessage = async () => {
+        await api.put(`ticket/${id}`, {
+            status: "answered",
+            chatList: [
+                {
+                    sender: "admin",
+                    message: typedMessage
+                }
+            ]
+        })
+        updateTypedMessage("")
+        getChat()
     }
 
     return (
@@ -52,28 +57,25 @@ function AdminChat() {
                     <div className="d-flex justify-content-center">
                         <div className="chat-messenger">
                             <div className="chat-messenger-header">
-                                {ticket.title}
+                                {chat.title}
                             </div>
                             <div className="chat-messenger-body">
                                 {
-                                    ticket.chat.map((mes) => (
-                                        mes.sender == 'admin'
+                                    chat.chatList.map((mes) => (
+                                        mes.sender === 'admin'
                                             ? (
                                                 <>
                                                     <div className="d-flex justify-content-center">
-                                                        <div className='chat-messenger-time'>{mes.time}</div>
+                                                        <div className='chat-messenger-time'>{mes.date}</div>
                                                     </div>
                                                     <div className="d-flex justify-content-end">
                                                         <div className="d-flex flex-column">
                                                             <div className='chat-messenger-item-info'>
                                                                 <Stack direction="row" spacing={2}>
-                                                                    <Avatar
-                                                                        alt="ََAdmin"
-                                                                        src={AdminAvatar}
-                                                                        className='ms-2'
-                                                                    />
+                                                                    <Avatar sx={{bgcolor: deepOrange[500]}}
+                                                                            className='ms-2'>پ</Avatar>
                                                                 </Stack>
-                                                                <span>برادر پشتیبان</span>
+                                                                <span> پشتیبان</span>
                                                             </div>
                                                             <div className='chat-messenger-item admin-message'>
                                                                 {mes.message}
@@ -90,15 +92,12 @@ function AdminChat() {
                                                     </div>
                                                     <div className="d-flex justify-content-start">
                                                         <div className="d-flex flex-column">
-                                                        <span className='chat-messenger-item-info'>
-                                                            <Stack direction="row" spacing={2}>
-                                                                <Avatar
-                                                                    alt="ََAdmin"
-                                                                    src={UserAvatar}
-                                                                    className='ms-2'
-                                                                />
-                                                            </Stack>
-                                                            <span>سروش</span>
+                                                            <span className='chat-messenger-item-info'>
+                                                             <Stack direction="row" spacing={2}>
+                                                                    <Avatar sx={{bgcolor: deepPurple[500]}}
+                                                                            className='ms-2'>{mes.sender.slice(0, 1)}</Avatar>
+                                                                </Stack>
+                                                            <span>{mes.sender}</span>
                                                         </span>
                                                             <div className='chat-messenger-item user-message'>
                                                                 {mes.message}
@@ -112,7 +111,8 @@ function AdminChat() {
                             </div>
                             <div className="chat-messenger-footer">
                                 <input type='text' placeholder='یک پیام تایپ کنید'
-                                       onChange={(e) => updateTypedMessage(e.target.value)}/>
+                                       onChange={(e) => updateTypedMessage(e.target.value)}
+                                       value={typedMessage}/>
                                 <button className='send-message' onClick={handleSendMessage}>ارسال</button>
                             </div>
                         </div>

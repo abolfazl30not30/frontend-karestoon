@@ -68,7 +68,8 @@ export default function EditCrowdFunding() {
     const [isUpload, setIsUpload] = useState(false);
     const [uploadFile, setUploadFile] = useState([]);
     const [fileName, setFileName] = useState("");
-
+    const [startDateChanged, setStartDateChanged] = useState(false);
+    const [endDateChanged, setEndDateChanged] = useState(false);
     const [project, setProject] = useState({})
     const [profileList, setProfileList] = useState([]);
     const getProject = async () => {
@@ -103,6 +104,7 @@ export default function EditCrowdFunding() {
     const [text, setText] = useState('');
     const [open, setOpen] = React.useState(false);
     const handleSetEndDate = (date) => {
+        setEndDateChanged(true)
         const convertedDate = date.getFullYear().toString() + "/" + date.getMonth().toString() + "/" + date.getDate().toString()
         setProject(existingValue => ({
             ...existingValue,
@@ -110,6 +112,7 @@ export default function EditCrowdFunding() {
         }))
     }
     const handleSetStartDate = (date) => {
+        setStartDateChanged(true)
         const convertedDate = date.getFullYear().toString() + "/" + date.getMonth().toString() + "/" + date.getDate().toString()
         setProject(existingValue => ({
             ...existingValue,
@@ -216,14 +219,38 @@ export default function EditCrowdFunding() {
     /*File Upload SetUp*/
 
     const handleEditProject = () => {
-        const convertedProject = {
+        const convertedProject = (startDateChanged && endDateChanged) ? {
             title: project.title,
             description: project.description,
             status: project.status,
             expectedBudge: project.expectedBudge,
             startDate: project.startDate,
             endDate: project.endDate,
-            priority: project.priority
+            priority: project.priority,
+            profileId: fileId
+        } : (startDateChanged && !endDateChanged) ? {
+            title: project.title,
+            description: project.description,
+            status: project.status,
+            expectedBudge: project.expectedBudge,
+            startDate: project.startDate,
+            priority: project.priority,
+            profileId: fileId
+        } : (!startDateChanged && endDateChanged) ? {
+            title: project.title,
+            description: project.description,
+            status: project.status,
+            expectedBudge: project.expectedBudge,
+            endDate: project.endDate,
+            priority: project.priority,
+            profileId: fileId
+        } : {
+            title: project.title,
+            description: project.description,
+            status: project.status,
+            expectedBudge: project.expectedBudge,
+            priority: project.priority,
+            profileId: fileId
         }
         api.put(`project/${id}`, convertedProject).then(() => navigate(`/admin/crowd-funding`))
     }
@@ -238,7 +265,7 @@ export default function EditCrowdFunding() {
                                 <div className="edit-project-title">ویرایش پروژه</div>
                                 <div className="col-12 my-2 px-2">
                                     <label htmlFor="project-title" className="font-bold pr-1">عنوان پروژه</label>
-                                    <input id="product-title" type="text" tabIndex="1" placeholder="پروژه شماره یک"
+                                    <input id="product-title" type="text" tabIndex="1" placeholder=""
                                            className="bg-white border-2 border-input rounded-md py-1.5 px-2 text-sm leading-6"
                                            autoFocus=""
                                            value={project.title}

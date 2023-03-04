@@ -29,6 +29,7 @@ function UserChat() {
     const handleSendMessage = async () => {
         const accountData = await api.get(`user/search?username=${localStorage.getItem("phoneNumber")}`)
         await api.put(`ticket/${id}`, {
+            status: "pending",
             chatList: [
                 {
                     sender: accountData.data.firstName + " " + accountData.data.lastName,

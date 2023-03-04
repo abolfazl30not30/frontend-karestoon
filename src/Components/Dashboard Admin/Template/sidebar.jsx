@@ -60,12 +60,14 @@ function Sidebar() {
                             </div>
                         </div>
                     </Link>
-                    <div className="d-flex flex-row align-items-center sidebar-list-item">
-                        <UilSignout />
-                        <div className="sidebar-list-item-title">
-                            خروج
+                    <Link onClick={() => localStorage.clear()} to="/" className={"w-100"}>
+                        <div className="d-flex flex-row align-items-center sidebar-list-item">
+                            <UilSignout />
+                            <div className="sidebar-list-item-title">
+                                خروج
+                            </div>
                         </div>
-                    </div>
+                    </Link>
                 </div>
             </div>
         </>
